@@ -6,7 +6,9 @@ import re
 # ==========================================
 source_urls = [
     "https://raw.githubusercontent.com/Aftab071/AftabIPTV/refs/heads/main/SyncIT",
-    "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Combined_Live_TV.m3u"
+    "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Combined_Live_TV.m3u",
+    "https://raw.githubusercontent.com/DrSujonPaul/Sujon/refs/heads/main/iptv"
+
 ]
 # ==========================================
 
