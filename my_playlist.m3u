@@ -25,21 +25,21 @@ Https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-vid
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1704/output/1704-audio_113342_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/17.png" group-title="Bangla", Somoy TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/1702-audio_113322_eng=113200-video=1998800.m3u8
-#EXTINF:-1 group-title="Bangla", Zee Bangla HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/34.png" group-title="Bangla", Zee Bangla HD
 Http://172.16.29.2:8090/hls/ZeeBanglaHD.m3u8
-#EXTINF:-1 group-title="Bangla", Zee Bangla Cinema HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/34.png" group-title="Bangla", Zee Bangla Cinema HD
 http://172.16.29.2:8090/hls/ZeeBanglaCinemaHD.m3u8
-#EXTINF:-1 group-title="Bangla", Colors Bangla HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/68.png" group-title="Bangla", Colors Bangla HD
 http://172.16.29.2:8090/hls/ColorsBanglaHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/13.png" group-title="Bangla", Jamuna TV
 http://172.16.29.2:8090/hls/JamunaTV.m3u8
-#EXTINF:-1 group-title="Bangla", Star Jalsha HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/30.png" group-title="Bangla", Star Jalsha HD
 http://172.16.29.2:8090/hls/StarJalshaHD.m3u8
 #EXTINF:-1 group-title="Bangla", Jalsha Movies HD
 http://172.16.29.2:8090/hls/JalshaMoviesHD.m3u8
 #EXTINF:-1 group-title="Bangla", Gazi TV HD
 http://172.16.29.2:8090/hls/gazitvhd.m3u8
-#EXTINF:-1 group-title="Bangla", Channel i HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/6.png" group-title="Bangla", Channel i HD
 http://172.16.29.2:8090/hls/channelihd.m3u8
 #EXTINF:-1 group-title="Bangla", Enter10 Bangla
 http://172.16.29.2:8090/hls/Enter10Bangla.m3u8
@@ -51,51 +51,51 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
 https://owrcovcrpy.gpcdn.net/bpk-tv/1716/output/1716-audio_113462_eng=113200-video=2202800.m3u8
 #EXTINF:-1 group-title="Sports", FanCode BD
 Https://bd-mc-fdlive.fancode.com/mumbai/138767_english_hls_843d7c911b99616_1ta-di_h264/1080p5.m3u8
-#EXTINF:-1 group-title="Sports", T Sports HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/102.png" group-title="Sports", T Sports HD
 Http://172.16.29.2:8090/hls/tsportshd.m3u8
 #EXTINF:-1 group-title="Sports", A Sports HD
 Http://172.16.29.2:8090/hls/ASportsHD.m3u8
-#EXTINF:-1 group-title="Sports", Star Sports 2 HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/26.png" group-title="Sports", Star Sports 2 HD
 http://172.16.29.2:8090/hls/StarSports2HD.m3u8
 #EXTINF:-1 group-title="Sports", DD Sports
 http://172.16.29.2:8090/hls/ddsports.m3u8
-#EXTINF:-1 group-title="Sports", Star Sports Select 1 HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/27.png" group-title="Sports", Star Sports Select 1 HD
 http://172.16.29.2:8090/hls/StarSportsSelect1HD.m3u8
 #EXTINF:-1 group-title="Sports", Sony Ten 5 HD
 http://172.16.29.2:8090/hls/SonyTen5HD.m3u8
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
 http://172.16.29.2:8090/hls/willowcrickethd.m3u8
-#EXTINF:-1 group-title="Sports", Star Sports 1 HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/25.png" group-title="Sports", Star Sports 1 HD
 http://172.16.29.2:8090/hls/StarSports1HD.m3u8
-#EXTINF:-1 group-title="Sports", Sony Ten 3 HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/22.png" group-title="Sports", Sony Ten 3 HD
 http://172.16.29.2:8090/hls/SonyTen3hd.m3u8
-#EXTINF:-1 group-title="Sports", Euro Sports HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/euro_sports_hd.png" group-title="Sports", Euro Sports HD
 http://172.16.29.2:8090/hls/eurosportshd.m3u8
-#EXTINF:-1 group-title="Sports", Star Sports Select 2 HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/28.png" group-title="Sports", Star Sports Select 2 HD
 http://172.16.29.2:8090/hls/StarSportsSelect2HD.m3u8
-#EXTINF:-1 group-title="Sports", Sony Ten 1 HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/20.png" group-title="Sports", Sony Ten 1 HD
 http://172.16.29.2:8090/hls/SonyTen1hd.m3u8
 #EXTINF:-1 group-title="Hindi", Goldmine
 Https://cdn-2.pishow.tv/live/1459/1459_1.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/sonymaxhd.png" group-title="Hindi", Sony Max HD
 Http://172.16.29.2:8090/hls/sonymaxhd.m3u8
-#EXTINF:-1 group-title="Hindi", Star Plus HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/67.png" group-title="Hindi", Star Plus HD
 http://172.16.29.2:8090/hls/StarPlusHD.m3u8
-#EXTINF:-1 group-title="Hindi", Zee TV HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/40.png" group-title="Hindi", Zee TV HD
 http://172.16.29.2:8090/hls/ZeeTVHD.m3u8
-#EXTINF:-1 group-title="Hindi", Colors HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/68.png" group-title="Hindi", Colors HD
 http://172.16.29.2:8090/hls/ColorsHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/33.png" group-title="Hindi", Sony Aath
 http://172.16.29.2:8090/hls/SonyAtth.m3u8
-#EXTINF:-1 group-title="Hindi", Sony TV HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/38.png" group-title="Hindi", Sony TV HD
 http://172.16.29.2:8090/hls/SonyHD.m3u8
-#EXTINF:-1 group-title="Hindi", Zee Cinema HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/76.png" group-title="Hindi", Zee Cinema HD
 http://172.16.29.2:8090/hls/ZeeCinemaHD.m3u8
 #EXTINF:-1 group-title="Hindi", Star Gold HD
 http://172.16.29.2:8090/hls/StarGoldHD.m3u8
-#EXTINF:-1 group-title="Hindi", Star Movies HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/starmovies.png" group-title="Hindi", Star Movies HD
 http://172.16.29.2:8090/hls/StarMoviesHD.m3u8
-#EXTINF:-1 group-title="Hindi", Colors Cineplex HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/68.png" group-title="Hindi", Colors Cineplex HD
 Http://172.16.29.2:8090/hls/ColorsCineplexHD.m3u8
 #EXTINF:-1 group-title="Music", Sangeet Bangla
 Http://172.16.29.2:8090/hls/SangeetBangla.m3u8
