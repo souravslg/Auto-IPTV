@@ -99,14 +99,14 @@ http://172.16.29.2:8090/hls/SonyAtth.m3u8
 http://172.16.29.2:8090/hls/SonyHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/76.png" group-title="Hindi", Zee Cinema HD
 http://172.16.29.2:8090/hls/ZeeCinemaHD.m3u8
-#EXTINF:-1 group-title="Hindi", Star Gold HD
-http://172.16.29.2:8090/hls/StarGoldHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/starmovies.png" group-title="Hindi", Star Movies HD
 http://172.16.29.2:8090/hls/StarMoviesHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/68.png" group-title="Hindi", Colors Cineplex HD
 Http://172.16.29.2:8090/hls/ColorsCineplexHD.m3u8
 #EXTINF:1 tvg-name="Star Bharat" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Star%20Bharat.jpg?raw=true" group-title="Hindi",Star Bharat HD
 http://103.175.73.12:8080/live/3/3_0.m3u8
+#EXTINF:1 tvg-name="Star Gold" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Star%20Gold.jpg?raw=true" group-title="Hindi",Star Gold HD
+http://103.175.73.12:8080/live/30/30_0.m3u8
 #EXTINF:-1 group-title="Hindi" tvg-chno="" tvg-id="" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Sony%20Sab.jpg?raw=true",SONY SAB HD
 http://103.175.73.12:8080/live/5/5_0.m3u8
 #EXTINF:1 tvg-name="Sony Yay" tvg-logo="https://tvassets.roarzone.info/images/sonyyay.png" group-title="Hindi",Sony Yay
