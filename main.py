@@ -2,7 +2,7 @@ import requests
 import re
 
 # আপনার সন্দেহভাজন লিংকটি (আমি বানান ঠিক করে দিয়েছি)
-url = "https://sonamul4545.vercel.app/siyam3535.m3u"
+url = "https://raw.githubusercontent.com/DrSujonPaul/Sujon/refs/heads/main/iptv"
 
 def doctor_check():
     print(f"Checking URL: {url}")
