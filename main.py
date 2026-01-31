@@ -2,17 +2,16 @@ import requests
 import re
 
 # ==========================================
-# আপনার ৪টি সোর্স লিংক
+# সোর্স লিংক এবং তাদের নাম (Tag)
 # ==========================================
-source_urls = [
-    "https://raw.githubusercontent.com/Aftab071/AftabIPTV/refs/heads/main/SyncIT",
-    "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Combined_Live_TV.m3u",
-    "https://raw.githubusercontent.com/DrSujonPaul/Sujon/refs/heads/main/iptv",
-    "https://sonamul4545.vercel.app/siyam3535.m3u"
+sources = [
+    {"tag": "link1", "url": "https://raw.githubusercontent.com/Aftab071/AftabIPTV/refs/heads/main/SyncIT"},
+    {"tag": "link2", "url": "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Combined_Live_TV.m3u"},
+    {"tag": "link3", "url": "https://raw.githubusercontent.com/DrSujonPaul/Sujon/refs/heads/main/iptv"},
+    {"tag": "link4", "url": "https://sonamul4545.vercel.app/siyam3535.m3u"}
 ]
 # ==========================================
 
-# প্লেলিস্টে গ্রুপের সিরিয়াল কেমন হবে
 group_priority = [
     "Live Event",
     "Bangla",
@@ -23,9 +22,13 @@ group_priority = [
 ]
 
 def generate_playlist():
-    specific_map = {}
-    wildcard_map = {}
+    # রুলস স্টোর করার জায়গা
+    # format: (source_tag, src_group, src_name) -> target_group
+    specific_rules = {} 
     
+    # format: (source_tag, src_group) -> target_group (Wildcards)
+    wildcard_rules = []
+
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     }
@@ -38,31 +41,46 @@ def generate_playlist():
                 if not line or line.startswith("#"):
                     continue
                 
-                parts = line.split("|")
+                parts = [p.strip() for p in line.split("|")]
+                
+                # যদি ৩টা অংশ থাকে, তাহলে ধরে নেব সব সোর্স (*)
                 if len(parts) == 3:
-                    src_group = parts[0].strip() 
-                    src_name = parts[1].strip().lower()
-                    target_group = parts[2].strip()
+                    tag = "*"
+                    src_group = parts[0]
+                    src_name = parts[1].lower()
+                    target_group = parts[2]
+                # যদি ৪টা অংশ থাকে, তাহলে নির্দিষ্ট সোর্স
+                elif len(parts) == 4:
+                    tag = parts[0].lower() # link1, link2 etc.
+                    src_group = parts[1]
+                    src_name = parts[2].lower()
+                    target_group = parts[3]
+                else:
+                    continue
 
-                    if src_name == "*":
-                        wildcard_map[src_group] = target_group
-                    else:
-                        specific_map[(src_group, src_name)] = target_group
+                if src_name == "*":
+                    wildcard_rules.append({"tag": tag, "src_group": src_group, "target": target_group})
+                else:
+                    specific_rules[(tag, src_group, src_name)] = target_group
                     
     except FileNotFoundError:
         print("Error: 'my_channels.txt' file not found!")
         return
 
-    print(f"Rules Loaded. Looking for groups like: {list(wildcard_map.keys())}")
+    print(f"Rules Loaded: {len(specific_rules)} specific, {len(wildcard_rules)} wildcards.")
 
     all_channels = []
-    found_keys = set()
-    found_links = set() # ডুপ্লিকেট লিংক আটকানোর জন্য
+    # আমরা এখানে চ্যানেল নাম মনে রাখব যাতে ডুপ্লিকেট না হয়
+    added_channel_names = set() 
+    found_links = set()
 
-    # ২. সব সোর্স থেকে খোঁজা
-    for url in source_urls:
+    # ২. সোর্স থেকে খোঁজা
+    for source in sources:
+        current_tag = source["tag"]
+        url = source["url"]
+        
         try:
-            print(f"Scanning source: {url}")
+            print(f"Scanning [{current_tag}]: {url}")
             response = requests.get(url, headers=headers, timeout=20)
             if response.status_code == 200:
                 lines = response.text.split('\n')
@@ -71,7 +89,6 @@ def generate_playlist():
                     line = lines[i].strip()
                     
                     if line.startswith("#EXTINF"):
-                        # গ্রুপ টাইটেল বের করা
                         group_match = re.search(r'group-title="([^"]*)"', line)
                         name_raw = line.split(',')[-1].strip()
                         
@@ -79,42 +96,60 @@ def generate_playlist():
                             current_group = group_match.group(1).strip()
                             current_name = name_raw.strip().lower()
                             
-                            new_target_group = None
+                            final_target = None
                             
-                            # === স্মার্ট চেকিং (Smart Match) ===
+                            # === রুলস চেকিং ===
                             
-                            # ১. নির্দিষ্ট নাম মিললে
-                            if (current_group, current_name) in specific_map:
-                                new_target_group = specific_map[(current_group, current_name)]
+                            # ১. একদম নির্দিষ্ট রুল আছে কিনা? (Link + Group + Name)
+                            # উদাহরণ: link1 এর Jamuna TV
+                            if (current_tag, current_group, current_name) in specific_rules:
+                                final_target = specific_rules[(current_tag, current_group, current_name)]
                             
-                            # ২. ওয়াইল্ডকার্ড (*) চেকিং
+                            # ২. যদি নির্দিষ্ট রুল না থাকে, তাহলে গ্লোবাল রুল আছে কিনা? (* + Group + Name)
+                            # উদাহরণ: * এর Jamuna TV
+                            elif ("*", current_group, current_name) in specific_rules:
+                                final_target = specific_rules[("*", current_group, current_name)]
+                                
+                            # ৩. ওয়াইল্ডকার্ড রুল (Link + Group + *)
                             else:
-                                for w_group in wildcard_map:
-                                    # যদি সোর্সের নামের ভেতরে আমাদের কিওয়ার্ড থাকে (যেমন: 'Bangla' শব্দটি 'Bangla🇧🇩' এর ভেতরে আছে)
-                                    if w_group.lower() in current_group.lower():
-                                        new_target_group = wildcard_map[w_group]
+                                for rule in wildcard_rules:
+                                    # ট্যাগ মিলতে হবে (অথবা * হতে হবে) AND গ্রুপ নামের অংশ মিলতে হবে
+                                    if (rule["tag"] == current_tag or rule["tag"] == "*") and \
+                                       (rule["src_group"].lower() in current_group.lower()):
+                                        final_target = rule["target"]
                                         break
                             
-                            if new_target_group:
+                            if final_target:
                                 # লিংক বের করা
                                 link_line = ""
                                 if i + 1 < len(lines) and not lines[i+1].startswith("#"):
                                     link_line = lines[i+1].strip()
                                 
-                                # ডুপ্লিকেট চেকিং (একই লিংক যেন দুইবার না আসে)
-                                if link_line and link_line not in found_links:
-                                    modified_line = re.sub(r'group-title="[^"]*"', f'group-title="{new_target_group}"', line)
+                                if link_line:
+                                    # ডুপ্লিকেট চেকিং:
+                                    # যদি আমরা স্পেসিফিক রুল দিয়ে চ্যানেলটি নিই, তাহলে সেটা নেবই।
+                                    # কিন্তু যদি ওয়াইল্ডকার্ড দিয়ে আসে এবং এই নামের চ্যানেল অলরেডি নেওয়া হয়ে থাকে, তাহলে বাদ দেব।
                                     
-                                    all_channels.append({
-                                        "group": new_target_group,
-                                        "content": modified_line + "\n" + link_line + "\n"
-                                    })
-                                    found_links.add(link_line)
+                                    unique_id = (final_target, current_name)
+                                    
+                                    # যদি স্পেসিফিক লিংকের রুল হয়, তাহলে অগ্রাধিকার পাবে
+                                    is_specific_request = (current_tag, current_group, current_name) in specific_rules
+                                    
+                                    if is_specific_request or unique_id not in added_channel_names:
+                                        modified_line = re.sub(r'group-title="[^"]*"', f'group-title="{final_target}"', line)
+                                        
+                                        all_channels.append({
+                                            "group": final_target,
+                                            "content": modified_line + "\n" + link_line + "\n"
+                                        })
+                                        
+                                        # তালিকায় যোগ করলাম যাতে পরে অন্য লিংক থেকে একই চ্যানেল ডুপ্লিকেট না হয়
+                                        added_channel_names.add(unique_id)
                                     
         except Exception as e:
-            print(f"Error checking source: {e}")
+            print(f"Error checking {current_tag}: {e}")
 
-    # ৩. সাজানো এবং সেভ করা
+    # ৩. সাজানো
     def sort_key(channel):
         grp = channel["group"]
         if grp in group_priority:
@@ -128,7 +163,7 @@ def generate_playlist():
         for ch in all_channels:
             f.write(ch["content"])
     
-    print(f"Success! Created my_playlist.m3u with {len(all_channels)} channels from {len(source_urls)} sources.")
+    print(f"Success! Total channels: {len(all_channels)}")
 
 if __name__ == "__main__":
     generate_playlist()
