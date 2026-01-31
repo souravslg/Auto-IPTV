@@ -105,5 +105,19 @@ http://172.16.29.2:8090/hls/StarGoldHD.m3u8
 http://172.16.29.2:8090/hls/StarMoviesHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/68.png" group-title="Hindi", Colors Cineplex HD
 Http://172.16.29.2:8090/hls/ColorsCineplexHD.m3u8
+#EXTINF:1 tvg-name="Star Bharat" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Star%20Bharat.jpg?raw=true" group-title="Hindi",Star Bharat HD
+http://103.175.73.12:8080/live/3/3_0.m3u8
+#EXTINF:-1 group-title="Hindi" tvg-chno="" tvg-id="" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Sony%20Sab.jpg?raw=true",SONY SAB HD
+http://103.175.73.12:8080/live/5/5_0.m3u8
+#EXTINF:1 tvg-name="Sony Yay" tvg-logo="https://tvassets.roarzone.info/images/sonyyay.png" group-title="Hindi",Sony Yay
+http://103.175.73.12:8080/live/122/122_0.m3u8
+#EXTINF:1 tvg-name="Sony Sab" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Sony%20Sab.jpg?raw=true" group-title="Hindi",Sony Sab
+http://217.20.112.199:8888/sabtvhd/index.m3u8
+#EXTINF:1 tvg-name="Star Gold" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Star%20Gold.jpg?raw=true" group-title="Hindi",Star Gold
+http://103.229.254.25:7001/play/a0df/index.m3u8
+#EXTINF:-1 tvg-id="1763" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Colors%20cineplex%20Bollywood.jpg?raw=true" group-title="Hindi",cineplex_bollywood
+http://imnoob.site/new.php?id=JC_ColorsCineplexBollywood/JCHLS/JC_ColorsCineplexBollywood-audio_98835_hin=98800-video=658800.m3u8
+#EXTINF:-1 tvg-id="1450" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Colors%20cineplex%20superhit.jpg?raw=true" group-title="Hindi",cineplex_superhits
+http://imnoob.site/new.php?id=JC_ColorsCineplexSuperhit/JCHLS/JC_ColorsCineplexSuperhit-audio_98835_hin=98800-video=658800.m3u8
 #EXTINF:-1 group-title="Music", Sangeet Bangla
 Http://172.16.29.2:8090/hls/SangeetBangla.m3u8
