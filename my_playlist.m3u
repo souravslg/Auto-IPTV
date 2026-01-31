@@ -13,10 +13,14 @@ https://bd-mc-fdlive.fancode.com/mumbai/139347_english_hls_7c6df135b872490_1ta-d
 https://bd-mc-fdlive.fancode.com/mumbai/131048_english_hls_1526422ab378838_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810)-(1)_1769529100515.png" group-title="Live Event",Day 4 - Centre Court vs Madrid, Spain (Hexagon Cup 2026)
 https://bd-mc-fdlive.fancode.com/mumbai/140168_english_hls_735e4dbfcd78236_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131043_5427_RO_GIR_FC-Web.png" group-title="Live Event",Real Oviedo vs Girona FC (LALIGA 2025-26)
-https://bd-mc-fdlive.fancode.com/mumbai/131043_english_hls_256ceeb3e71542_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/farmers-insurance-open-2026-old-match-card-_1769182129290.png" group-title="Live Event",Main Feed - Day 3 vs Torrey Pines Golf Course (Farmers Insurance Open 2026)
+https://bd-mc-fdlive.fancode.com/mumbai/140031_english_hls_ba0311953b17264_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/farmers-insurance-open-2026-old-match-card-_1769182129290.png" group-title="Live Event",Featured Holes - Day 3 vs Torrey Pines Golf Course (Farmers Insurance Open 2026)
+https://bd-mc-fdlive.fancode.com/mumbai/140034_english_hls_bc9889b7b389576_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140083_5928_DR_PPT_FC-Web_1769805880964.jpg" group-title="Live Event",Pune Panthers Vs Dubai Royals
 https://bd-mc-fdlive.fancode.com/mumbai/140083_hindi_hls_a398d95df242556_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/farmers-insurance-open-2026-old-match-card-_1769182129290.png" group-title="Live Event",Featured Groups   Day 3
+https://bd-mc-fdlive.fancode.com/mumbai/140033_english_hls_97fcdda9ad89287_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
