@@ -3,8 +3,6 @@
 https://bd-mc-fdlive.fancode.com/mumbai/140082_english_hls_e6ba31439b63607_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://images.fancode.com/aig/match/v1/139399_CASACARDS_APP.png" group-title="Live Event",Sydney FC vs Western Sydney Wanderers (A League 2025-26)
 https://bd-mc-fdlive.fancode.com/mumbai/139399_english_hls_99bb54ef5a38779_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Icons-Series-Golf_2026_FC-Web.jpg" group-title="Live Event",Day 1 vs Bangkok (Icons of Football, 2026)
-https://bd-mc-fdlive.fancode.com/mumbai/140136_english_hls_03471c5e7053101_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dream-Sports-Championship-2026---Table-Tennisold-match-card.png" group-title="Live Event",Day 1 - Table 1 vs Chennai (Dream Sports Championship Table Tennis 2026)
 https://bd-mc-fdlive.fancode.com/mumbai/140309_english_hls_56d9655fd950618_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dream-Sports-Championship-2026---Table-Tennisold-match-card.png" group-title="Live Event",Day 1 - Table 2 vs Chennai (Dream Sports Championship Table Tennis 2026)
@@ -17,15 +15,15 @@ https://bd-mc-fdlive.fancode.com/mumbai/140328_english_hls_d4b56037b620347_1ta-d
 https://bd-mc-fdlive.fancode.com/mumbai/140168_english_hls_735e4dbfcd78236_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140082_5928_GT_RLS_FC-Web_1769655566346.jpg" group-title="Live Event",Rajasthan Lions Vs Gurugram Thunders
 https://bd-mc-fdlive.fancode.com/mumbai/140082_hindi_hls_d491c0cc5667459_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Bangla", Deepto TV
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
-#EXTINF:-1 group-title="Bangla", ATN News
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1706/output/1706-audio_113362_eng=113200-video=1998800.m3u8
 #EXTINF:-1 group-title="Bangla", Banglavision
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-video=1998800.m3u8
-#EXTINF:-1 group-title="Bangla", Independent TV
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/12.png" group-title="Bangla", Independent TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1704/output/1704-audio_113342_eng=113200-video=1692000.m3u8
-#EXTINF:-1 group-title="Bangla", Somoy TV
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/17.png" group-title="Bangla", Somoy TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/1702-audio_113322_eng=113200-video=1998800.m3u8
 #EXTINF:-1 group-title="Bangla", Zee Bangla HD
 Http://172.16.29.2:8090/hls/ZeeBanglaHD.m3u8
@@ -33,7 +31,7 @@ Http://172.16.29.2:8090/hls/ZeeBanglaHD.m3u8
 http://172.16.29.2:8090/hls/ZeeBanglaCinemaHD.m3u8
 #EXTINF:-1 group-title="Bangla", Colors Bangla HD
 http://172.16.29.2:8090/hls/ColorsBanglaHD.m3u8
-#EXTINF:-1 group-title="Bangla", Jamuna TV
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/13.png" group-title="Bangla", Jamuna TV
 http://172.16.29.2:8090/hls/JamunaTV.m3u8
 #EXTINF:-1 group-title="Bangla", Star Jalsha HD
 http://172.16.29.2:8090/hls/StarJalshaHD.m3u8
@@ -47,12 +45,10 @@ http://172.16.29.2:8090/hls/channelihd.m3u8
 http://172.16.29.2:8090/hls/Enter10Bangla.m3u8
 #EXTINF:-1 group-title="Bangla" tvg-logo="https://i.postimg.cc/PxyNJrGm/ATN-News.jpg",Ayna TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/ayna.stream/tracks-v1a1/mono.m3u8
-#EXTINF:-1 group-title="Bangla" tvg-logo="https://i.postimg.cc/cJHPmjNJ/BTV.jpg",BTV
+#EXTINF:-1 group-title="Bangla" tvg-logo="https://tvassets.roarzone.info/images/53.png",BTV
 https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
-#EXTINF:-1 group-title="Bangla" tvg-logo="https://i.postimg.cc/zfrz2hw9/NTV.jpg",NTV
+#EXTINF:-1 group-title="Bangla" tvg-logo="https://tvassets.roarzone.info/images/54.png",NTV
 https://owrcovcrpy.gpcdn.net/bpk-tv/1716/output/1716-audio_113462_eng=113200-video=2202800.m3u8
-#EXTINF:-1 group-title="Bangla" tvg-logo="https://i.postimg.cc/zfrz2hw9/NTV.jpg",NTV
-https://tvsen1.aynaott.com/xV4jEKf3D9zc/index.m3u8
 #EXTINF:-1 group-title="Sports", FanCode BD
 Https://bd-mc-fdlive.fancode.com/mumbai/138767_english_hls_843d7c911b99616_1ta-di_h264/1080p5.m3u8
 #EXTINF:-1 group-title="Sports", T Sports HD
@@ -81,7 +77,7 @@ http://172.16.29.2:8090/hls/StarSportsSelect2HD.m3u8
 http://172.16.29.2:8090/hls/SonyTen1hd.m3u8
 #EXTINF:-1 group-title="Hindi", Goldmine
 Https://cdn-2.pishow.tv/live/1459/1459_1.m3u8
-#EXTINF:-1 group-title="Hindi", Sony Max HD
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/sonymaxhd.png" group-title="Hindi", Sony Max HD
 Http://172.16.29.2:8090/hls/sonymaxhd.m3u8
 #EXTINF:-1 group-title="Hindi", Star Plus HD
 http://172.16.29.2:8090/hls/StarPlusHD.m3u8
@@ -89,7 +85,7 @@ http://172.16.29.2:8090/hls/StarPlusHD.m3u8
 http://172.16.29.2:8090/hls/ZeeTVHD.m3u8
 #EXTINF:-1 group-title="Hindi", Colors HD
 http://172.16.29.2:8090/hls/ColorsHD.m3u8
-#EXTINF:-1 group-title="Hindi", Sony Aath
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/33.png" group-title="Hindi", Sony Aath
 http://172.16.29.2:8090/hls/SonyAtth.m3u8
 #EXTINF:-1 group-title="Hindi", Sony TV HD
 http://172.16.29.2:8090/hls/SonyHD.m3u8
@@ -103,7 +99,3 @@ http://172.16.29.2:8090/hls/StarMoviesHD.m3u8
 Http://172.16.29.2:8090/hls/ColorsCineplexHD.m3u8
 #EXTINF:-1 group-title="Music", Sangeet Bangla
 Http://172.16.29.2:8090/hls/SangeetBangla.m3u8
-#EXTINF:-1 group-title="Music" tvg-logo="https://i.postimg.cc/pLG976s5/Sangeet-Bangla.jpg",Sangeet Bangla
-http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2906.ts
-#EXTINF:-1 group-title="Music" tvg-logo="https://i.postimg.cc/pLG976s5/Sangeet-Bangla.jpg",Sangeet Bangla
-http://103.140.254.2:3500/live/740.m3u8
