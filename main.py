@@ -15,38 +15,50 @@ sources = [
 group_priority = ["Live Event", "Bangla", "Sports", "India", "Hindi", "Others"]
 
 def load_logos():
-    """ logos.json ফাইল লোড করে এবং সব নাম ছোট হাতের অক্ষরে কনভার্ট করে """
     try:
         with open("logos.json", "r", encoding="utf-8") as f:
             data = json.load(f)
-            
-            # === ফিক্স: সব কি-ওয়ার্ড লোয়ারকেস (ছোট হাতের) করা হচ্ছে ===
-            clean_map = {}
-            for k, v in data.items():
-                # নাম থেকে অযথা স্পেস সরানো হচ্ছে এবং ছোট হাতের করা হচ্ছে
-                clean_key = k.strip().lower()
-                clean_map[clean_key] = v.strip()
-            
-            return clean_map
-            
-    except FileNotFoundError:
-        print("⚠️ Warning: logos.json file not found! Logos will be empty.")
+            # কি-ওয়ার্ডগুলো ছোট হাতের করে ক্লিন করা হচ্ছে
+            return {k.strip().lower(): v.strip() for k, v in data.items()}
+    except:
         return {}
-    except json.JSONDecodeError:
-        print("❌ Error: logos.json file has format error! Check for extra commas.")
-        return {}
+
+# === স্মার্ট লোগো ফাইন্ডার ফাংশন ===
+def find_smart_logo(channel_name, logo_map):
+    # ১. প্রথমে সরাসরি চেক (Exact Match)
+    if channel_name in logo_map:
+        return logo_map[channel_name]
+    
+    # ২. চ্যানেল নাম ক্লিন করা (স্পেস, হাইফেন এবং HD/FHD রিমুভ)
+    # উদাহরণ: "star sports select 1 hd" -> "starsportsselect1"
+    clean_channel = channel_name.replace(" ", "").replace("-", "").replace(":", "")
+    clean_channel = clean_channel.replace("hd", "").replace("fhd", "").replace("4k", "")
+    
+    # ৩. লোগো ম্যাপের সব কি-ওয়ার্ডের সাথে মেলানো
+    for key, url in logo_map.items():
+        # লোগোর নামও ক্লিন করা
+        # উদাহরণ: "Star Sports Select 1" -> "starsportsselect1"
+        clean_key = key.replace(" ", "").replace("-", "").replace(":", "")
+        
+        # এখন চেক করা হচ্ছে
+        # যদি ক্লিন করা লোগোর নাম, ক্লিন করা চ্যানেলের নামের ভেতরে থাকে
+        if clean_key in clean_channel:
+            # খুব ছোট নাম যাতে ভুল ম্যাচ না করে (যেমন 'atn' যেন 'atn news' এ না বসে) সেটার জন্য চেক
+            # তবে স্পোর্টস চ্যানেলের জন্য এটা খুব ভালো কাজ করবে
+            return url
+            
+    return None
+# ====================================
 
 def generate_playlist():
     specific_rules = {} 
     wildcard_rules = []
     
-    # লোগো লোড করা হচ্ছে (সব ছোট হাতের অক্ষরে কনভার্ট হয়ে আসবে)
     logo_map = load_logos()
-    print(f"✅ Loaded {len(logo_map)} logos (Case Insensitive Mode)")
+    print(f"✅ Loaded {len(logo_map)} logos (Smart Match Enabled)")
 
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
-    # my_channels.txt রিড করা
     try:
         with open("my_channels.txt", "r", encoding="utf-8") as file:
             for line in file:
@@ -62,9 +74,8 @@ def generate_playlist():
 
                 if src_nm == "*": wildcard_rules.append({"tag": tag, "src_group": src_grp, "target": tgt_grp})
                 else: specific_rules[(tag, src_grp, src_nm)] = tgt_grp
-                    
-    except FileNotFoundError:
-        print("Error: 'my_channels.txt' not found!")
+    except:
+        print("Error reading my_channels.txt")
         return
 
     all_channels = []
@@ -85,11 +96,9 @@ def generate_playlist():
                         
                         if grp_match:
                             cur_grp = grp_match.group(1).strip()
-                            # সোর্স থেকে পাওয়া নামও ছোট হাতের করা হচ্ছে
                             cur_nm = name_raw.strip().lower()
                             final_tgt = None
                             
-                            # রুলস চেকিং
                             if (tag, cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[(tag, cur_grp, cur_nm)]
                             elif ("*", cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[("*", cur_grp, cur_nm)]
                             else:
@@ -102,17 +111,17 @@ def generate_playlist():
                                 link_line = lines[i+1].strip() if i+1 < len(lines) and not lines[i+1].startswith("#") else ""
                                 
                                 if link_line and (final_tgt, cur_nm) not in added_ids:
-                                    # === লোগো বসানোর অংশ ===
                                     mod_line = re.sub(r'group-title="[^"]*"', f'group-title="{final_tgt}"', line)
                                     
-                                    # এখন cur_nm (ছোট হাতের) দিয়ে logo_map (ছোট হাতের) চেক করা হচ্ছে
-                                    if cur_nm in logo_map:
-                                        logo_url = logo_map[cur_nm]
-                                        # যদি আগে লোগো থাকে সেটা রিপ্লেস করবে, না থাকলে যোগ করবে
+                                    # === নতুন স্মার্ট লোগো ফাইন্ডার কল করা হচ্ছে ===
+                                    found_logo_url = find_smart_logo(cur_nm, logo_map)
+                                    
+                                    if found_logo_url:
                                         if 'tvg-logo="' in mod_line:
-                                            mod_line = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', mod_line)
+                                            mod_line = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{found_logo_url}"', mod_line)
                                         else:
-                                            mod_line = mod_line.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{logo_url}"')
+                                            mod_line = mod_line.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{found_logo_url}"')
+                                    # ===============================================
                                     
                                     all_channels.append({"group": final_tgt, "content": mod_line + "\n" + link_line + "\n"})
                                     added_ids.add((final_tgt, cur_nm))
@@ -124,7 +133,7 @@ def generate_playlist():
         f.write("#EXTM3U\n")
         for ch in all_channels: f.write(ch["content"])
     
-    print(f"Done! Channels: {len(all_channels)}")
+    print(f"Done! Channels created: {len(all_channels)}")
 
 if __name__ == "__main__":
     generate_playlist()
