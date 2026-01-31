@@ -15,26 +15,34 @@ sources = [
 group_priority = ["Live Event", "Bangla", "Sports", "India", "Hindi", "Others"]
 
 def load_logos():
-    # প্রথমে চেষ্টা করবে logos.json ফাইল পড়ার জন্য
+    """ logos.json ফাইল লোড করে এবং সব নাম ছোট হাতের অক্ষরে কনভার্ট করে """
     try:
         with open("logos.json", "r", encoding="utf-8") as f:
             data = json.load(f)
-            # সব নাম ছোট হাতের করে কনভার্ট করা হচ্ছে
-            return {k.lower(): v for k, v in data.items()}
+            
+            # === ফিক্স: সব কি-ওয়ার্ড লোয়ারকেস (ছোট হাতের) করা হচ্ছে ===
+            clean_map = {}
+            for k, v in data.items():
+                # নাম থেকে অযথা স্পেস সরানো হচ্ছে এবং ছোট হাতের করা হচ্ছে
+                clean_key = k.strip().lower()
+                clean_map[clean_key] = v.strip()
+            
+            return clean_map
+            
     except FileNotFoundError:
         print("⚠️ Warning: logos.json file not found! Logos will be empty.")
         return {}
     except json.JSONDecodeError:
-        print("❌ Error: logos.json file has format error! Check commas.")
+        print("❌ Error: logos.json file has format error! Check for extra commas.")
         return {}
 
 def generate_playlist():
     specific_rules = {} 
     wildcard_rules = []
     
-    # === লোগো লোড করা হচ্ছে ===
+    # লোগো লোড করা হচ্ছে (সব ছোট হাতের অক্ষরে কনভার্ট হয়ে আসবে)
     logo_map = load_logos()
-    print(f"✅ Loaded {len(logo_map)} logos from logos.json")
+    print(f"✅ Loaded {len(logo_map)} logos (Case Insensitive Mode)")
 
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
@@ -77,6 +85,7 @@ def generate_playlist():
                         
                         if grp_match:
                             cur_grp = grp_match.group(1).strip()
+                            # সোর্স থেকে পাওয়া নামও ছোট হাতের করা হচ্ছে
                             cur_nm = name_raw.strip().lower()
                             final_tgt = None
                             
@@ -93,11 +102,13 @@ def generate_playlist():
                                 link_line = lines[i+1].strip() if i+1 < len(lines) and not lines[i+1].startswith("#") else ""
                                 
                                 if link_line and (final_tgt, cur_nm) not in added_ids:
-                                    # === লোগো বসানোর কোড ===
+                                    # === লোগো বসানোর অংশ ===
                                     mod_line = re.sub(r'group-title="[^"]*"', f'group-title="{final_tgt}"', line)
                                     
+                                    # এখন cur_nm (ছোট হাতের) দিয়ে logo_map (ছোট হাতের) চেক করা হচ্ছে
                                     if cur_nm in logo_map:
                                         logo_url = logo_map[cur_nm]
+                                        # যদি আগে লোগো থাকে সেটা রিপ্লেস করবে, না থাকলে যোগ করবে
                                         if 'tvg-logo="' in mod_line:
                                             mod_line = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', mod_line)
                                         else:
