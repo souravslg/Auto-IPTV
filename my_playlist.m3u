@@ -11,14 +11,6 @@ https://bd-mc-fdlive.fancode.com/mumbai/139769_english_hls_fc8cb32e1e37514_1ta-d
 https://bd-mc-fdlive.fancode.com/mumbai/139346_english_hls_8111e79aee87560_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131043_5427_RO_GIR_FC-Web.png" group-title="Live Event",Real Oviedo vs Girona FC (LALIGA 2025-26)
 https://bd-mc-fdlive.fancode.com/mumbai/131043_english_hls_256ceeb3e71542_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dream-Sports-Championship-2026---Table-Tennisold-match-card.png" group-title="Live Event",Day 1 - Table 1 vs Chennai (Dream Sports Championship Table Tennis 2026)
-https://bd-mc-fdlive.fancode.com/mumbai/140309_english_hls_56d9655fd950618_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dream-Sports-Championship-2026---Table-Tennisold-match-card.png" group-title="Live Event",Day 1 - Table 2 vs Chennai (Dream Sports Championship Table Tennis 2026)
-https://bd-mc-fdlive.fancode.com/mumbai/140330_english_hls_801a6b020b28841_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dream-Sports-Championship-2026---Table-Tennisold-match-card.png" group-title="Live Event",Day 1 - Table 3 vs Chennai (Dream Sports Championship Table Tennis 2026)
-https://bd-mc-fdlive.fancode.com/mumbai/140329_english_hls_4a364dcc6012120_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dream-Sports-Championship-2026---Table-Tennisold-match-card.png" group-title="Live Event",Day 1 - Table 4 vs Chennai (Dream Sports Championship Table Tennis 2026)
-https://bd-mc-fdlive.fancode.com/mumbai/140328_english_hls_d4b56037b620347_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810)-(1)_1769529100515.png" group-title="Live Event",Day 4 - Centre Court vs Madrid, Spain (Hexagon Cup 2026)
 https://bd-mc-fdlive.fancode.com/mumbai/140168_english_hls_735e4dbfcd78236_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140083_5928_DR_PPT_FC-Web_1769805880964.jpg" group-title="Live Event",Pune Panthers Vs Dubai Royals
@@ -99,6 +91,8 @@ http://172.16.29.2:8090/hls/SonyAtth.m3u8
 http://172.16.29.2:8090/hls/SonyHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/76.png" group-title="Hindi", Zee Cinema HD
 http://172.16.29.2:8090/hls/ZeeCinemaHD.m3u8
+#EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/75.png" group-title="Hindi", Star Gold Select HD
+http://172.16.29.2:8090/hls/StarGoldHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/starmovies.png" group-title="Hindi", Star Movies HD
 http://172.16.29.2:8090/hls/StarMoviesHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/68.png" group-title="Hindi", Colors Cineplex HD
@@ -115,9 +109,5 @@ http://103.175.73.12:8080/live/122/122_0.m3u8
 http://217.20.112.199:8888/sabtvhd/index.m3u8
 #EXTINF:1 tvg-name="Star Gold" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Star%20Gold.jpg?raw=true" group-title="Hindi",Star Gold
 http://103.229.254.25:7001/play/a0df/index.m3u8
-#EXTINF:-1 tvg-id="1763" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Colors%20cineplex%20Bollywood.jpg?raw=true" group-title="Hindi",cineplex_bollywood
-http://imnoob.site/new.php?id=JC_ColorsCineplexBollywood/JCHLS/JC_ColorsCineplexBollywood-audio_98835_hin=98800-video=658800.m3u8
-#EXTINF:-1 tvg-id="1450" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Colors%20cineplex%20superhit.jpg?raw=true" group-title="Hindi",cineplex_superhits
-http://imnoob.site/new.php?id=JC_ColorsCineplexSuperhit/JCHLS/JC_ColorsCineplexSuperhit-audio_98835_hin=98800-video=658800.m3u8
 #EXTINF:-1 group-title="Music", Sangeet Bangla
 Http://172.16.29.2:8090/hls/SangeetBangla.m3u8
