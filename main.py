@@ -3,48 +3,51 @@ import re
 import json
 
 # ==========================================
-# ১. সোর্স লিংকস
+# ১. সোর্স লিংকস (Link 5 সহ)
 # ==========================================
 sources = [
     {"tag": "link1", "url": "https://raw.githubusercontent.com/Aftab071/AftabIPTV/refs/heads/main/SyncIT"},
     {"tag": "link2", "url": "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Combined_Live_TV.m3u"},
     {"tag": "link3", "url": "https://raw.githubusercontent.com/DrSujonPaul/Sujon/refs/heads/main/iptv"},
-    {"tag": "link4", "url": "https://sonamul4545.vercel.app/siyam3535.m3u"}
+    {"tag": "link4", "url": "https://sonamul4545.vercel.app/siyam3535.m3u"},
+    {"tag": "link5", "url": "https://raw.githubusercontent.com/sm-monirulislam/AynaOTT-auto-update-playlist/refs/heads/main/AynaOTT.m3u"}
 ]
 
-group_priority = ["Live Event", "Bangla", "Sports", "India", "Hindi", "Others"]
+# ==========================================
+# ২. গ্রুপের সিরিয়াল (আপনার নতুন রিকুয়েস্ট অনুযায়ী)
+# ==========================================
+group_priority = [
+    "Live Event",
+    "Bangla",
+    "Kolkata",
+    "Sports",
+    "India",
+    "Hindi",
+    "Others"
+]
 
 def load_logos():
     try:
         with open("logos.json", "r", encoding="utf-8") as f:
             data = json.load(f)
-            # কি-ওয়ার্ডগুলো ছোট হাতের করে ক্লিন করা হচ্ছে
             return {k.strip().lower(): v.strip() for k, v in data.items()}
     except:
         return {}
 
 # === স্মার্ট লোগো ফাইন্ডার ফাংশন ===
 def find_smart_logo(channel_name, logo_map):
-    # ১. প্রথমে সরাসরি চেক (Exact Match)
+    # ১. প্রথমে সরাসরি চেক
     if channel_name in logo_map:
         return logo_map[channel_name]
     
-    # ২. চ্যানেল নাম ক্লিন করা (স্পেস, হাইফেন এবং HD/FHD রিমুভ)
-    # উদাহরণ: "star sports select 1 hd" -> "starsportsselect1"
+    # ২. নাম ক্লিন করা (স্পেস, হাইফেন, HD/FHD রিমুভ)
     clean_channel = channel_name.replace(" ", "").replace("-", "").replace(":", "")
     clean_channel = clean_channel.replace("hd", "").replace("fhd", "").replace("4k", "")
     
-    # ৩. লোগো ম্যাপের সব কি-ওয়ার্ডের সাথে মেলানো
+    # ৩. লোগো ম্যাপের সাথে মেলানো
     for key, url in logo_map.items():
-        # লোগোর নামও ক্লিন করা
-        # উদাহরণ: "Star Sports Select 1" -> "starsportsselect1"
         clean_key = key.replace(" ", "").replace("-", "").replace(":", "")
-        
-        # এখন চেক করা হচ্ছে
-        # যদি ক্লিন করা লোগোর নাম, ক্লিন করা চ্যানেলের নামের ভেতরে থাকে
         if clean_key in clean_channel:
-            # খুব ছোট নাম যাতে ভুল ম্যাচ না করে (যেমন 'atn' যেন 'atn news' এ না বসে) সেটার জন্য চেক
-            # তবে স্পোর্টস চ্যানেলের জন্য এটা খুব ভালো কাজ করবে
             return url
             
     return None
@@ -99,6 +102,7 @@ def generate_playlist():
                             cur_nm = name_raw.strip().lower()
                             final_tgt = None
                             
+                            # রুলস চেকিং
                             if (tag, cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[(tag, cur_grp, cur_nm)]
                             elif ("*", cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[("*", cur_grp, cur_nm)]
                             else:
@@ -113,20 +117,19 @@ def generate_playlist():
                                 if link_line and (final_tgt, cur_nm) not in added_ids:
                                     mod_line = re.sub(r'group-title="[^"]*"', f'group-title="{final_tgt}"', line)
                                     
-                                    # === নতুন স্মার্ট লোগো ফাইন্ডার কল করা হচ্ছে ===
+                                    # স্মার্ট লোগো বসানো
                                     found_logo_url = find_smart_logo(cur_nm, logo_map)
-                                    
                                     if found_logo_url:
                                         if 'tvg-logo="' in mod_line:
                                             mod_line = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{found_logo_url}"', mod_line)
                                         else:
                                             mod_line = mod_line.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{found_logo_url}"')
-                                    # ===============================================
                                     
                                     all_channels.append({"group": final_tgt, "content": mod_line + "\n" + link_line + "\n"})
                                     added_ids.add((final_tgt, cur_nm))
         except Exception as e: print(f"Error {tag}: {e}")
 
+    # নতুন সিরিয়াল অনুযায়ী সাজানো
     all_channels.sort(key=lambda x: group_priority.index(x["group"]) if x["group"] in group_priority else 999)
 
     with open("my_playlist.m3u", "w", encoding="utf-8") as f:
