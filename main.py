@@ -4,7 +4,7 @@ import json
 import base64
 
 # ==========================================
-# আপনার ওয়েবসাইট লিংক (Link Masking Server)
+# আপনার ওয়েবসাইট লিংক
 # ==========================================
 MY_SERVER_URL = "http://aftabiptv.rf.gd/play.php"
 # ==========================================
@@ -21,7 +21,8 @@ group_priority = ["Live Event", "Bangla", "Kolkata", "Sports", "India", "Hindi",
 
 def load_logos():
     try:
-        with open("logos.json", "r", encoding="utf-8") as f:
+        # errors='ignore' যোগ করা হয়েছে যাতে বাংলা লেখায় সমস্যা না হয়
+        with open("logos.json", "r", encoding="utf-8", errors="ignore") as f:
             data = json.load(f)
             return {k.strip().lower(): v.strip() for k, v in data.items()}
     except:
@@ -45,7 +46,8 @@ def generate_playlist():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
     try:
-        with open("my_channels.txt", "r", encoding="utf-8") as file:
+        # ফিক্স: errors='ignore' যোগ করা হয়েছে
+        with open("my_channels.txt", "r", encoding="utf-8", errors="ignore") as file:
             for line in file:
                 line = line.strip()
                 if not line or line.startswith("#"): continue
@@ -59,9 +61,10 @@ def generate_playlist():
 
                 if src_nm == "*": wildcard_rules.append({"tag": tag, "src_group": src_grp, "target": tgt_grp})
                 else: specific_rules[(tag, src_grp, src_nm)] = tgt_grp
-    except:
-        print("Error reading my_channels.txt")
-        return
+    except Exception as e:
+        print(f"Error reading my_channels.txt: {e}")
+        # রিটার্ন না করে সামনে আগানোর চেষ্টা করবে
+        pass
 
     all_channels = []
     added_ids = set() 
@@ -105,7 +108,7 @@ def generate_playlist():
                                         else:
                                             mod_line = mod_line.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{found_logo_url}"')
                                     
-                                    # === লিংক মাস্কিং (Link Masking) ===
+                                    # === লিংক মাস্কিং ===
                                     encoded_link = base64.b64encode(link_line.encode('utf-8')).decode('utf-8')
                                     masked_link = f"{MY_SERVER_URL}?id={encoded_link}"
                                     
@@ -113,4 +116,13 @@ def generate_playlist():
                                     added_ids.add((final_tgt, cur_nm))
         except Exception as e: print(f"Error {tag}: {e}")
 
-    all_
+    all_channels.sort(key=lambda x: group_priority.index(x["group"]) if x["group"] in group_priority else 999)
+
+    with open("my_playlist.m3u", "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
+        for ch in all_channels: f.write(ch["content"])
+    
+    print(f"✅ Success! Generated {len(all_channels)} channels with MASKED links.")
+
+if __name__ == "__main__":
+    generate_playlist()
