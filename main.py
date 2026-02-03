@@ -1,10 +1,14 @@
 import requests
 import re
 import json
+import base64
 
 # ==========================================
-# ১. সোর্স লিংকস (Link 5 সহ)
+# আপনার ওয়েবসাইট লিংক (Link Masking Server)
 # ==========================================
+MY_SERVER_URL = "http://aftabiptv.rf.gd/play.php"
+# ==========================================
+
 sources = [
     {"tag": "link1", "url": "https://raw.githubusercontent.com/Aftab071/AftabIPTV/refs/heads/main/SyncIT"},
     {"tag": "link2", "url": "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Combined_Live_TV.m3u"},
@@ -13,18 +17,7 @@ sources = [
     {"tag": "link5", "url": "https://raw.githubusercontent.com/sm-monirulislam/AynaOTT-auto-update-playlist/refs/heads/main/AynaOTT.m3u"}
 ]
 
-# ==========================================
-# ২. গ্রুপের সিরিয়াল (আপনার নতুন রিকুয়েস্ট অনুযায়ী)
-# ==========================================
-group_priority = [
-    "Live Event",
-    "Bangla",
-    "Kolkata",
-    "Sports",
-    "India",
-    "Hindi",
-    "Others"
-]
+group_priority = ["Live Event", "Bangla", "Kolkata", "Sports", "India", "Hindi", "Others"]
 
 def load_logos():
     try:
@@ -34,31 +27,20 @@ def load_logos():
     except:
         return {}
 
-# === স্মার্ট লোগো ফাইন্ডার ফাংশন ===
 def find_smart_logo(channel_name, logo_map):
-    # ১. প্রথমে সরাসরি চেক
-    if channel_name in logo_map:
-        return logo_map[channel_name]
-    
-    # ২. নাম ক্লিন করা (স্পেস, হাইফেন, HD/FHD রিমুভ)
-    clean_channel = channel_name.replace(" ", "").replace("-", "").replace(":", "")
-    clean_channel = clean_channel.replace("hd", "").replace("fhd", "").replace("4k", "")
-    
-    # ৩. লোগো ম্যাপের সাথে মেলানো
+    if channel_name in logo_map: return logo_map[channel_name]
+    clean_channel = channel_name.replace(" ", "").replace("-", "").replace(":", "").replace("hd", "").replace("fhd", "").replace("4k", "")
     for key, url in logo_map.items():
         clean_key = key.replace(" ", "").replace("-", "").replace(":", "")
-        if clean_key in clean_channel:
-            return url
-            
+        if clean_key in clean_channel: return url
     return None
-# ====================================
 
 def generate_playlist():
     specific_rules = {} 
     wildcard_rules = []
     
     logo_map = load_logos()
-    print(f"✅ Loaded {len(logo_map)} logos (Smart Match Enabled)")
+    print(f"✅ Loaded {len(logo_map)} logos")
 
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
@@ -102,7 +84,6 @@ def generate_playlist():
                             cur_nm = name_raw.strip().lower()
                             final_tgt = None
                             
-                            # রুলস চেকিং
                             if (tag, cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[(tag, cur_grp, cur_nm)]
                             elif ("*", cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[("*", cur_grp, cur_nm)]
                             else:
@@ -117,7 +98,6 @@ def generate_playlist():
                                 if link_line and (final_tgt, cur_nm) not in added_ids:
                                     mod_line = re.sub(r'group-title="[^"]*"', f'group-title="{final_tgt}"', line)
                                     
-                                    # স্মার্ট লোগো বসানো
                                     found_logo_url = find_smart_logo(cur_nm, logo_map)
                                     if found_logo_url:
                                         if 'tvg-logo="' in mod_line:
@@ -125,18 +105,12 @@ def generate_playlist():
                                         else:
                                             mod_line = mod_line.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{found_logo_url}"')
                                     
-                                    all_channels.append({"group": final_tgt, "content": mod_line + "\n" + link_line + "\n"})
+                                    # === লিংক মাস্কিং (Link Masking) ===
+                                    encoded_link = base64.b64encode(link_line.encode('utf-8')).decode('utf-8')
+                                    masked_link = f"{MY_SERVER_URL}?id={encoded_link}"
+                                    
+                                    all_channels.append({"group": final_tgt, "content": mod_line + "\n" + masked_link + "\n"})
                                     added_ids.add((final_tgt, cur_nm))
         except Exception as e: print(f"Error {tag}: {e}")
 
-    # নতুন সিরিয়াল অনুযায়ী সাজানো
-    all_channels.sort(key=lambda x: group_priority.index(x["group"]) if x["group"] in group_priority else 999)
-
-    with open("my_playlist.m3u", "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
-        for ch in all_channels: f.write(ch["content"])
-    
-    print(f"Done! Channels created: {len(all_channels)}")
-
-if __name__ == "__main__":
-    generate_playlist()
+    all_
