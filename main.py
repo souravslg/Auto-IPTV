@@ -1,14 +1,10 @@
 import requests
 import re
 import json
-import base64
 
 # ==========================================
-# আপনার ওয়েবসাইট লিংক
+# ১. সোর্স লিংকস (Link 5 সহ)
 # ==========================================
-MY_SERVER_URL = "http://aftabiptv.rf.gd/play.php"
-# ==========================================
-
 sources = [
     {"tag": "link1", "url": "https://raw.githubusercontent.com/Aftab071/AftabIPTV/refs/heads/main/SyncIT"},
     {"tag": "link2", "url": "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Combined_Live_TV.m3u"},
@@ -17,24 +13,43 @@ sources = [
     {"tag": "link5", "url": "https://raw.githubusercontent.com/sm-monirulislam/AynaOTT-auto-update-playlist/refs/heads/main/AynaOTT.m3u"}
 ]
 
-group_priority = ["Live Event", "Bangla", "Kolkata", "Sports", "India", "Hindi", "Others"]
+# ==========================================
+# ২. গ্রুপ সিরিয়াল
+# ==========================================
+group_priority = [
+    "Live Event",
+    "Bangla",
+    "Kolkata",
+    "Sports",
+    "India",
+    "Hindi",
+    "Others"
+]
 
 def load_logos():
     try:
-        # errors='ignore' যোগ করা হয়েছে যাতে বাংলা লেখায় সমস্যা না হয়
+        # বাংলা লেখার ইরর এড়ানোর জন্য errors='ignore' দেওয়া হলো
         with open("logos.json", "r", encoding="utf-8", errors="ignore") as f:
             data = json.load(f)
             return {k.strip().lower(): v.strip() for k, v in data.items()}
     except:
         return {}
 
+# === স্মার্ট লোগো ফাইন্ডার (HD/FHD ফিক্স) ===
 def find_smart_logo(channel_name, logo_map):
-    if channel_name in logo_map: return logo_map[channel_name]
-    clean_channel = channel_name.replace(" ", "").replace("-", "").replace(":", "").replace("hd", "").replace("fhd", "").replace("4k", "")
+    if channel_name in logo_map:
+        return logo_map[channel_name]
+    
+    # নাম ক্লিন করা (স্পেস, হাইফেন, HD/FHD রিমুভ)
+    clean_channel = channel_name.replace(" ", "").replace("-", "").replace(":", "")
+    clean_channel = clean_channel.replace("hd", "").replace("fhd", "").replace("4k", "")
+    
     for key, url in logo_map.items():
         clean_key = key.replace(" ", "").replace("-", "").replace(":", "")
-        if clean_key in clean_channel: return url
+        if clean_key in clean_channel:
+            return url
     return None
+# ===========================================
 
 def generate_playlist():
     specific_rules = {} 
@@ -46,7 +61,6 @@ def generate_playlist():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
     try:
-        # ফিক্স: errors='ignore' যোগ করা হয়েছে
         with open("my_channels.txt", "r", encoding="utf-8", errors="ignore") as file:
             for line in file:
                 line = line.strip()
@@ -62,8 +76,7 @@ def generate_playlist():
                 if src_nm == "*": wildcard_rules.append({"tag": tag, "src_group": src_grp, "target": tgt_grp})
                 else: specific_rules[(tag, src_grp, src_nm)] = tgt_grp
     except Exception as e:
-        print(f"Error reading my_channels.txt: {e}")
-        # রিটার্ন না করে সামনে আগানোর চেষ্টা করবে
+        print(f"Warning: my_channels.txt reading error: {e}")
         pass
 
     all_channels = []
@@ -87,6 +100,7 @@ def generate_playlist():
                             cur_nm = name_raw.strip().lower()
                             final_tgt = None
                             
+                            # রুলস চেকিং
                             if (tag, cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[(tag, cur_grp, cur_nm)]
                             elif ("*", cur_grp, cur_nm) in specific_rules: final_tgt = specific_rules[("*", cur_grp, cur_nm)]
                             else:
@@ -101,6 +115,7 @@ def generate_playlist():
                                 if link_line and (final_tgt, cur_nm) not in added_ids:
                                     mod_line = re.sub(r'group-title="[^"]*"', f'group-title="{final_tgt}"', line)
                                     
+                                    # স্মার্ট লোগো বসানো
                                     found_logo_url = find_smart_logo(cur_nm, logo_map)
                                     if found_logo_url:
                                         if 'tvg-logo="' in mod_line:
@@ -108,21 +123,19 @@ def generate_playlist():
                                         else:
                                             mod_line = mod_line.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{found_logo_url}"')
                                     
-                                    # === লিংক মাস্কিং ===
-                                    encoded_link = base64.b64encode(link_line.encode('utf-8')).decode('utf-8')
-                                    masked_link = f"{MY_SERVER_URL}?id={encoded_link}"
-                                    
-                                    all_channels.append({"group": final_tgt, "content": mod_line + "\n" + masked_link + "\n"})
+                                    # সরাসরি লিংক বসানো হচ্ছে (কোনো মাস্কিং নেই)
+                                    all_channels.append({"group": final_tgt, "content": mod_line + "\n" + link_line + "\n"})
                                     added_ids.add((final_tgt, cur_nm))
         except Exception as e: print(f"Error {tag}: {e}")
 
+    # সিরিয়াল অনুযায়ী সাজানো
     all_channels.sort(key=lambda x: group_priority.index(x["group"]) if x["group"] in group_priority else 999)
 
     with open("my_playlist.m3u", "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for ch in all_channels: f.write(ch["content"])
     
-    print(f"✅ Success! Generated {len(all_channels)} channels with MASKED links.")
+    print(f"✅ Done! Channels created: {len(all_channels)}")
 
 if __name__ == "__main__":
     generate_playlist()
