@@ -14,7 +14,7 @@ sources = [
 ]
 
 # ==========================================
-# CONFIGURATION: Manual Channels (Custom/Admin)
+# CONFIGURATION: Manual Channels (Admin Links)
 # ==========================================
 manual_channels = [
     {
@@ -44,13 +44,6 @@ group_priority = [
     "Hindi",
     "Others"
 ]
-
-# ==========================================
-# CONFIGURATION: Owner Details (Header Card)
-# ==========================================
-ADMIN_NAME = "OWNER: Aftab071"
-ADMIN_LOGO = "https://i.ibb.co/hRvpjD8/telegram-logo.png"
-TELEGRAM_LINK = "https://t.me/aftab071"
 
 # ==========================================
 # HELPER FUNCTIONS
@@ -89,18 +82,15 @@ def generate_playlist():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
     all_channels = []
-    
-    # 1. Add Owner Header Card
-    admin_content = f'#EXTINF:-1 group-title="Admin Info" tvg-logo="{ADMIN_LOGO}", {ADMIN_NAME}\n{TELEGRAM_LINK}\n'
-    all_channels.append({"group": "Admin Info", "content": admin_content})
 
-    # 2. Add Manual Channels
+    # 1. Add Manual Channels (Admin Links)
     for manual in manual_channels:
         m_name = manual["name"]
         m_group = manual["group"]
         m_logo = manual["logo"]
         m_link = manual["link"]
         
+        # Try to find logo if missing
         if not m_logo:
             found = find_smart_logo(m_name.lower(), logo_map)
             if found: m_logo = found
@@ -108,7 +98,7 @@ def generate_playlist():
         content = f'#EXTINF:-1 group-title="{m_group}" tvg-logo="{m_logo}", {m_name}\n{m_link}\n'
         all_channels.append({"group": m_group, "content": content})
 
-    # 3. Load Filtering Rules
+    # 2. Load Filtering Rules
     try:
         with open("my_channels.txt", "r", encoding="utf-8", errors="ignore") as file:
             for line in file:
@@ -129,7 +119,7 @@ def generate_playlist():
     except Exception:
         print("[!] Warning: Could not read my_channels.txt")
 
-    # 4. Fetch and Process Sources
+    # 3. Fetch and Process Sources
     added_ids = set() 
     
     for source in sources:
@@ -183,7 +173,7 @@ def generate_playlist():
         except Exception as e:
             print(f"[!] Error processing {tag}: {e}")
 
-    # 5. Sort and Save Playlist
+    # 4. Sort and Save Playlist
     all_channels.sort(key=lambda x: group_priority.index(x["group"]) if x["group"] in group_priority else 999)
 
     with open("my_playlist.m3u", "w", encoding="utf-8") as f:
