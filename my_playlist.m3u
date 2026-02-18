@@ -14,7 +14,7 @@ https://in-mc-flive.fancode.com/mumbai/134036_english_hls_ab6f47f920741_1ta-di_h
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/134037_5609_TAS_NSW_fc-Web.jpg" group-title="Live Event",Tasmania Vs New South Wales
 https://in-mc-plive.fancode.com/mumbai/134037_english_hls_26ae0af60c62361_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Apti_cup_web.jpg" group-title="Live Event",Day 3
-https://in-mc-flive.fancode.com/mumbai/140601_english_hls_fb36d3a80c49827_1ta-di_h264/index.m3u8?hdnea=exp=1771399533~acl=/mumbai/140601_english_hls_fb36d3a80c49827_1ta-di_h264/*~id=5c1a2d7b8f02d931_8fdf0189-0754-4f~data=5c1a2d7b8f02d931_free_420~hmac=dda7e8f3125134031f6b86bdc71fe0edfcea03afe0b51fa027a00f8035387560&deviceId=5c1a2d7b8f02d931&advertiserId=7e42d87b-45cd-4cf6-b0ae-1fae68d9430&ft_type=c1&cust_params=app_version%3D6.15.0%26app_platform%3Dsportsguruand%26state%3DMaharashtra%26city%3DMumbai%26userId%3D%26match_id%3D140601%26match_format%3DAuction%26tour_id%3D5962%26tour_name%3DApti_Cup_T20_Tournament%26sport%3Dliveevents%26authorizationType%3DPAID&state=Maharashtra&city=Mumbai
+https://in-mc-flive.fancode.com/mumbai/140601_english_hls_fb36d3a80c49827_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/F1_web_1770205109895.jpg" group-title="Live Event",Day 1
 https://india-mpv2.fancode.com/out/v1/ap-south-1/139561_english_571505/ad-h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
@@ -34,57 +34,57 @@ http://172.16.29.2:8090/hls/gazitvhd.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/LzVX7DTt/CHANNEL-I-HD.png" group-title="Bangla", Channel i HD
 http://172.16.29.2:8090/hls/channelihd.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/84.png" group-title="Bangla",BTV World
-https://tvsen6.aynascope.net/btv_world/index.m3u8?e=1771407212&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=f09bde9274b5b633e4a12b62d173e7d0
+https://tvsen6.aynascope.net/btv_world/index.m3u8?e=1771411889&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=b9308591d7ae8aeb50c1900808dfa9b4
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/53.png" group-title="Bangla",BTV CTG
-https://tvsen6.aynascope.net/btvctg/index.m3u8?e=1771407213&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=0b0a56341ffbe13fc0c111cda6bd22aa
+https://tvsen6.aynascope.net/btvctg/index.m3u8?e=1771411889&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=7e1a8d72aa79996609b1803d42e554ee
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/14.png" group-title="Bangla",RTV
-https://tvsen5.aynascope.net/RtvHD/index.m3u8?e=1771407218&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=6a580b0168d769449112f417f6b640ac
+https://tvsen5.aynascope.net/RtvHD/index.m3u8?e=1771411895&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=06cc47da02546b310fb9ef1f63b784e0
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/2.png" group-title="Bangla",ATN Bangla
-https://tvsen5.aynascope.net/atnbangla/index.m3u8?e=1771407218&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=8156ec530ceb01a3547fc60dd239ccdc
+https://tvsen5.aynascope.net/atnbangla/index.m3u8?e=1771411896&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=5ba1b043dd8f1f07c4370d1330ede271
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/8a1af81802b0728c064c2adabcdc72c8" group-title="Bangla",ETV
-https://tvsen6.aynascope.net/etv/index.m3u8?e=1771407219&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=31194a21e881f86a923ae79720fa591b
+https://tvsen6.aynascope.net/etv/index.m3u8?e=1771411896&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=b934fa83d71db444f5ccab8e32466108
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/51.png" group-title="Bangla",Maasranga TV
-https://tvsen5.aynascope.net/maasrangatv/index.m3u8?e=1771407220&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=60b2afae20cf0024cfee38dd439ba497
+https://tvsen5.aynascope.net/maasrangatv/index.m3u8?e=1771411897&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=3d17a3aa90e74c9201eb5fdcbfa31955
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/9.png" group-title="Bangla",Desh TV
-https://tvsen6.aynascope.net/deshtv/index.m3u8?e=1771407222&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=8f51e86de9c4e7810be656b7a8cab840
+https://tvsen6.aynascope.net/deshtv/index.m3u8?e=1771411900&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=e33849edef14879277c0c0191729e8e6
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/61.png" group-title="Bangla",Boishakhi TV
-https://tvsen6.aynascope.net/boishakhitv/index.m3u8?e=1771407223&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=bc81cb904e11850c58b4b3278de7ccf2
+https://tvsen6.aynascope.net/boishakhitv/index.m3u8?e=1771411900&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=b51c4216482f11f3d147d33adcdd7e5e
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/4.png" group-title="Bangla",Channel 9
-https://tvsen6.aynascope.net/channel9/index.m3u8?e=1771407223&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=cbd713b13dc0fbcb5884708b72836a21
+https://tvsen6.aynascope.net/channel9/index.m3u8?e=1771411901&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=f26c677458b24791c3cbe5e008d18de5
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/62.png" group-title="Bangla",Asian TV
-https://tvsen6.aynascope.net/asiantv/index.m3u8?e=1771407224&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=200f27a4076b64ba87d7ca35adc2407e
+https://tvsen6.aynascope.net/asiantv/index.m3u8?e=1771411902&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=e31b2480496da9aa3d7e95aae765ee32
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/15.png" group-title="Bangla",SA TV
-https://tvsen6.aynascope.net/satv/index.m3u8?e=1771407225&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=1a34e0c43b50c75ed6a3ce902dfa5d16
+https://tvsen6.aynascope.net/satv/index.m3u8?e=1771411903&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=e4d5cb9fa247ef8051fb85954a2f1196
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/10.png" group-title="Bangla",Duronto TV
-https://tvsen6.aynascope.net/durontotv-live/index.m3u8?e=1771407226&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=a7ced3b788f6e4993445cd2fd2020878
+https://tvsen6.aynascope.net/durontotv-live/index.m3u8?e=1771411903&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=6795daa5a2f1f13a92659aed490cc204
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/19.png" group-title="Bangla",Bangla TV
-https://tvsen6.aynascope.net/banglatv/index.m3u8?e=1771407226&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=256bb11998d8db168ded5838c2315252
+https://tvsen6.aynascope.net/banglatv/index.m3u8?e=1771411904&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=382db9cc61792fa8c234217d33cff830
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/53.png" group-title="Bangla",BTV NATIONAL HD
-https://tvsen6.aynascope.net/btvhd/index.m3u8?e=1771407227&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=9c3f63b560b60d0ee55eb16523b6464e
+https://tvsen6.aynascope.net/btvhd/index.m3u8?e=1771411905&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=b44857a4c18d6a5c5eff7d4eb09eb487
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/nNwGCvJH/ANANDA-TV.png" group-title="Bangla",Ananda TV
-https://tvsen6.aynascope.net/anandatv/index.m3u8?e=1771407228&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=a41e6e49a7c0aa3c2810a65e56fb6b44
+https://tvsen6.aynascope.net/anandatv/index.m3u8?e=1771411906&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=436c3d9ce2708a6bc18ecb529bf4957a
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/56.png" group-title="Bangla",My TV
-https://tvsen6.aynascope.net/mytv/index.m3u8?e=1771407228&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=17a2f413c92b15fd204ec16d3d159683
+https://tvsen6.aynascope.net/mytv/index.m3u8?e=1771411907&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=2234cc1555cf9b43de2114fa8543d11b
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/ffd7ba9b76ad555933f94bcb7ff26b44" group-title="Bangla",Global TV
-https://tvsen6.aynascope.net/globaltvhd/index.m3u8?e=1771407229&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=850da5986900bcabda13f90e076c2dff
+https://tvsen6.aynascope.net/globaltvhd/index.m3u8?e=1771411907&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=0fb6430822a2a52f2972f76070f8be2c
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/bijoy-tv.jpg" group-title="Bangla",Bijoy TV
-https://tvsen6.aynascope.net/bijoytv/index.m3u8?e=1771407230&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=0ddd9e3f0bfd2899dc4a2527d17de6ed
+https://tvsen6.aynascope.net/bijoytv/index.m3u8?e=1771411908&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=13d886ed3032ab5adf605dc1b71c5eec
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/90635c3edf6e3c8dd92210b7248f1fa0" group-title="Bangla",NEXUS TV
-https://tvsen6.aynascope.net/nexustv/index.m3u8?e=1771407231&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=014857aa5504e4085c725b624f57ced7
+https://tvsen6.aynascope.net/nexustv/index.m3u8?e=1771411909&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=c2890a991f78e99379ce5e866a01fc39
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/50.png" group-title="Bangla",Mohona TV
-https://tvsen6.aynascope.net/mohonatv/index.m3u8?e=1771407231&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=d0240bd40ba55ad52d5397214ddf91c5
+https://tvsen6.aynascope.net/mohonatv/index.m3u8?e=1771411909&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=0d7e72dd5d4879430fae1bc5c53fb697
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/08773290bf83a917aebc07810f12ed49" group-title="Bangla",Drama 24
 https://vods2.aynascope.net/gseriesDrama/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/5.png" group-title="Bangla",Channel 24
-https://tvsen6.aynascope.net/channel24/index.m3u8?e=1771407238&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=ba7bc21b5c6180135a646f4795ca3227
+https://tvsen6.aynascope.net/channel24/index.m3u8?e=1771411916&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=7e802b1c87c1b9cae720b2882bff677a
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/7.png" group-title="Bangla",DBC News
-https://tvsen6.aynascope.net/dbcnews/index.m3u8?e=1771407240&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=1755c0baf5f3e12bb32be95aa58ae973
+https://tvsen6.aynascope.net/dbcnews/index.m3u8?e=1771411918&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=1b2a0fec20103d57f97f4c19c887361b
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/ekhon-tv.jpg" group-title="Bangla",Ekhon TV
-https://tvsen6.aynascope.net/ekhontv/index.m3u8?e=1771407241&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=ff6b6c7d7f57a8d8f705f2bd01ddf942
+https://tvsen6.aynascope.net/ekhontv/index.m3u8?e=1771411919&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=0f22e21dcdbf6ae075cc11b76e568036
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/18.png" group-title="Bangla",News 24 BD
-https://tvsen6.aynascope.net/news24/index.m3u8?e=1771407242&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=864384d30dfff03590adbc76d11bc14c
+https://tvsen6.aynascope.net/news24/index.m3u8?e=1771411920&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=ee1b4b50fc3bc3f522da982e7b074c36
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/11.png" group-title="Bangla",Ekattor TV
-https://tvsen6.aynascope.net/ekattorbdtv/index.m3u8?e=1771407243&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=a1365fbfe376a72beaca4c012fd4f7b3
+https://tvsen6.aynascope.net/ekattorbdtv/index.m3u8?e=1771411921&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=f6d4c362cad898812056360497732ec2
 #EXTINF:-1 tvg-logo="https://i.ibb.co.com/fdWwTTrt/ZEE-BANGLA.png" group-title="Kolkata", Zee Bangla HD
 Http://172.16.29.2:8090/hls/ZeeBanglaHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/29.png" group-title="Kolkata", Zee Bangla Cinema HD
