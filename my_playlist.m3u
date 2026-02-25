@@ -131,15 +131,5 @@ http://172.16.29.2:8090/hls/StarGoldHD.m3u8
 http://172.16.29.2:8090/hls/StarMoviesHD.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/68.png" group-title="Hindi", Colors Cineplex HD
 Http://172.16.29.2:8090/hls/ColorsCineplexHD.m3u8
-#EXTINF:1 tvg-name="Star Gold" tvg-logo="https://i.ibb.co/FLt5BgtG/STAR-GOLD.png" group-title="Hindi",Star Gold
-https://aureliumtv.vercel.app/Star-gold.m3u8
-#EXTINF:-1 group-title="Hindi" tvg-chno="" tvg-id="" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Sony%20Sab.jpg?raw=true",SONY SAB HD
-https://aureliumtv.vercel.app/Sony-sab-HD.m3u8
-#EXTINF:-1 tvg-name="Sony Pal" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Sony%20Pal.jpg?raw=true" group-title="Hindi",Sony Pal
-https://aureliumtv.vercel.app/Sony-pal.m3u8
-#EXTINF:1 tvg-name="Sony Yay" tvg-logo="https://tvassets.roarzone.info/images/sonyyay.png" group-title="Hindi",Sony Yay
-https://aureliumtv.vercel.app/Sony-yay.m3u8
-#EXTINF:1 tvg-name="Sony Sab" tvg-logo="https://github.com/sonamul4545/Channel_logo-s/blob/main/Sony%20Sab.jpg?raw=true" group-title="Hindi",Sony Sab
-http://217.20.112.199:8888/sabtvhd/index.m3u8
 #EXTINF:-1 group-title="Music", Sangeet Bangla
 Http://172.16.29.2:8090/hls/SangeetBangla.m3u8
