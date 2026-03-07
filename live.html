@@ -1,0 +1,435 @@
+<html lang="en">
+<head>
+
+
+     <!--
+     * PROJECT: Live TV Streaming Web (Toffeex Theme )
+     * DEVELOPER: sultanarabi161
+     * DESCRIPTION: M3U Playlist based live TV player with categories and auto-play
+     * FEATURES: Dark theme, responsive design, Video.js player, error handling
+     * CREDIT: Developed by sultanarabi161
+    -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>mxonlive — Sports & TV Channels</title>
+    <meta name="description" content="Watch free live sports, cricket, football, news & entertainment channels in HD quality.">
+    
+    <script src="https://pl28840376.effectivegatecpm.com/ed/e6/12/ede612495f9076e188a590ac709b66be.js"></script>
+    
+    <link rel="icon" type="image/webp" href="https://mxonlive.github.io/assets/mxonlive_logo.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://mxonlive.github.io/assets/mxonlive_logo.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://mxonlive.github.io/assets/mxonlive_logo.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://mxonlive.github.io/assets/mxonlive_logo.webp">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <style>
+        /* Base styling for a dark theme */
+        body {
+            font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #ddd;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+        .main-wrapper { flex: 1; width: 100%; padding: 15px 0 0; }
+        
+        /* Video Player Container */
+        .player-wrapper {
+            background: #000;
+            border: 1px solid #1a1a1a;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.9);
+            overflow: hidden;
+        }
+        
+        /* Maintains a 16:9 aspect ratio for the HTML5 video */
+        .ratio-16x9 { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden; background: #000; }
+        #my-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            outline: none;
+        }
+
+        /* Category & Channel List Panel */
+        .content-panel {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 4px;
+            padding: 15px 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Horizontal scrolling for categories */
+        .nav-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #222;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: grab;
+        }
+        .nav-scroll::-webkit-scrollbar { display: none; }
+        .nav-scroll:active { cursor: grabbing; }
+        .nav-tabs { display: flex; flex-wrap: nowrap; border: none; gap: 8px; }
+        
+        /* Category Button Styling */
+        .nav-link {
+            color: #888 !important;
+            font-weight: 600;
+            font-size: 13px;
+            border: 1px solid #222;
+            border-radius: 2px !important;
+            padding: 6px 16px;
+            background: #111;
+            transition: all .2s;
+        }
+        .nav-link.active {
+            background: #fff !important;
+            color: #000 !important;
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(255,255,255,.1);
+        }
+
+        /* Grid for Channel Logos */
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+            gap: 10px;
+            justify-content: center;
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        @media (max-width: 991px) { .channel-grid { max-height: none; overflow-y: visible; } }
+        .channel-grid::-webkit-scrollbar { width: 4px; }
+        .channel-grid::-webkit-scrollbar-thumb { background: #e50914; border-radius: 4px; }
+
+        /* Individual Channel Card */
+        .channel-card {
+            background: #fff;
+            border-radius: 4px;
+            aspect-ratio: 1/1;
+            padding: 8px;
+            cursor: pointer;
+            transition: transform .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+        }
+        .channel-card:hover { transform: translateY(-3px); border-color: white; }
+        .channel-card.active-channel { border-color: #e50914; box-shadow: 0 0 12px rgba(229,9,20,.4); }
+        .channel-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        /* Notifications & Utilities */
+        #visitor-counter { text-align: center; margin-top: auto; padding: 20px 0; background: #000; border-top: 1px solid #111; }
+        .load-notice { color: #ff9800; text-align: center; padding: 15px; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; margin: 15px auto; max-width: 600px; }
+        #loading { text-align: center; padding: 40px 0; color: #999; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 mb-3">
+            <div class="player-wrapper">
+                <div class="ratio-16x9">
+                    <video id="my-video" controls preload="auto" playsinline></video>
+                </div>
+            </div>
+            <div id="load-notice" class="load-notice" style="display:none;">
+                ⚠️ Channels are currently not loading. The playlist source may be down or blocked. Please try again later.
+            </div>
+        </div>
+        
+        <div class="col-12 col-lg-4 mb-3">
+            <div class="content-panel">
+                <div id="loading">Loading playlist... Please wait</div>
+                
+                <div class="nav-scroll" id="categoryScroll" style="display:none;">
+                    <ul class="nav nav-tabs" id="category-tabs"></ul>
+                </div>
+                
+                <div id="channel-container" class="channel-grid" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="visitor-counter">
+    <script type="text/javascript" src="https://free-hit-counters.net/count/jjxr"></script><br>
+    <a href='https://www.acadoo.de/'>acadoo</a>
+    <script type='text/javascript' src='https://www.whomania.com/ctr?id=ab2c3721c0f14fe4129c1261eb60965ee4805c2e'></script>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<script>
+const M3U_URL = "https://m3u.ch/pl/b425af0fcb90211c765f6f3599512544_939ad57dec37203be6f003af5a038fb6.m3u";
+const DEFAULT_CAT = "Sports";
+
+let hls; // Declare hls variable globally
+let allChannels = [];
+let categories = [];
+let currentPlayingUrl = null;
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Make category scrollable with mouse wheel
+    const catScroll = document.getElementById('categoryScroll');
+    if (catScroll) {
+        catScroll.addEventListener('wheel', e => {
+            e.preventDefault();
+            catScroll.scrollLeft += e.deltaY;
+        });
+    }
+
+    // 2. Start fetching the M3U playlist
+    loadPlaylist();
+});
+
+// Fetches the playlist data from the URL
+async function loadPlaylist() {
+    try {
+        const response = await fetch(M3U_URL);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const text = await response.text();
+        
+        // Parse the raw text into our JavaScript arrays
+        parseM3U(text);
+        
+        // Push the default category (e.g., "sports") to the very front of the list
+        const defaultIndex = categories.findIndex(c => c.toLowerCase() === DEFAULT_CAT.toLowerCase());
+        if (defaultIndex !== -1) {
+            const defaultCat = categories.splice(defaultIndex, 1)[0];
+            categories.unshift(defaultCat);
+        }
+        
+        // Hide loading text and show UI
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('categoryScroll').style.display = 'block';
+        document.getElementById('channel-container').style.display = 'grid';
+        
+        // If categories exist, display them and load the first one automatically
+        if (categories.length > 0) {
+            renderCategories();
+            const startCat = categories[0];
+            filterChannels(startCat, true);
+        }
+    } catch (err) {
+        console.error("Failed to load:", err);
+        document.getElementById('loading').innerHTML = "Failed to load playlist";
+        document.getElementById('load-notice').style.display = 'block';
+    }
+}
+
+// Converts M3U text into an array of channel objects
+function parseM3U(text) {
+    allChannels = [];
+    const catSet = new Set();
+    let current = null;
+    
+    // Split text by line breaks
+    text.split(/\r?\n/).forEach(line => {
+        line = line.trim();
+        if (!line || line.startsWith('#EXTM3U')) return;
+        
+        // Extract channel info
+        if (line.startsWith('#EXTINF:')) {
+            current = parseExtInf(line);
+        } 
+        // Extract stream URL
+        else if (current && !line.startsWith('#')) {
+            current.stream_url = line;
+            if (current.name && current.stream_url) {
+                allChannels.push(current);
+                if (current.category_name) catSet.add(current.category_name);
+            }
+            current = null; // Reset for the next channel
+        }
+    });
+    // Convert Set back to Array and sort alphabetically
+    categories = Array.from(catSet).sort();
+}
+
+// Extracts the logo, group-title (category), and channel name from an #EXTINF line
+function parseExtInf(line) {
+    const obj = {
+        name: '',
+        logo: 'https://via.placeholder.com/100?text=TV',
+        category_name: 'Others',
+        stream_url: ''
+    };
+    
+    // Get the channel name (everything after the last comma)
+    const commaPos = line.indexOf(',');
+    if (commaPos !== -1) {
+        obj.name = line.slice(commaPos + 1).trim();
+    }
+    
+    // Get attributes like tvg-logo and group-title using Regular Expressions
+    const attrStr = line.substring(0, commaPos).replace('#EXTINF:', '').trim();
+    const attrs = attrStr.match(/([a-zA-Z0-9\-]+)="([^"]*)"/g) || [];
+    
+    attrs.forEach(m => {
+        const matchInfo = m.match(/([a-zA-Z0-9\-]+)="([^"]*)"/);
+        if (matchInfo) {
+            const key = matchInfo[1];
+            const val = matchInfo[2];
+            if (key === 'tvg-logo') obj.logo = val;
+            if (key === 'group-title') obj.category_name = val.trim();
+        }
+    });
+    
+    return obj;
+}
+
+// Creates the clickable category tabs in the UI
+function renderCategories() {
+    const container = document.getElementById('category-tabs');
+    container.innerHTML = '';
+    
+    categories.forEach((cat, idx) => {
+        const li = document.createElement('li');
+        li.className = 'nav-item';
+        
+        const a = document.createElement('a');
+        a.className = 'nav-link' + (idx === 0 ? ' active' : '');
+        a.href = '#';
+        a.textContent = cat;
+        
+        // When a category is clicked, highlight it and show its channels
+        a.onclick = e => {
+            e.preventDefault();
+            document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+            a.classList.add('active');
+            filterChannels(cat, false);
+        };
+        
+        li.appendChild(a);
+        container.appendChild(li);
+    });
+}
+
+// Displays channels that belong to the selected category
+function filterChannels(category, shouldAutoPlay = false) {
+    const container = document.getElementById('channel-container');
+    container.innerHTML = ''; // Clear previous channels
+    
+    let firstUrl = null;
+    let firstCard = null;
+    
+    allChannels.forEach(ch => {
+        if ((ch.category_name || 'Others') === category) {
+            const div = document.createElement('div');
+            div.className = 'channel-card';
+            div.title = ch.name;
+            
+            // Play this channel when clicked
+            div.onclick = () => playStream(ch.stream_url, div);
+            
+            const img = document.createElement('img');
+            img.src = ch.logo;
+            img.loading = 'lazy';
+            img.alt = ch.name;
+            
+            // Fallback image if logo fails to load
+            img.onerror = () => { img.src = 'https://via.placeholder.com/100?text=TV'; };
+            
+            div.appendChild(img);
+            container.appendChild(div);
+            
+            // Save the first channel to auto-play it
+            if (!firstUrl) {
+                firstUrl = ch.stream_url;
+                firstCard = div;
+            }
+            
+            // Highlight the card if it is currently playing
+            if (currentPlayingUrl === ch.stream_url) {
+                div.classList.add('active-channel');
+            }
+        }
+    });
+    
+    // Auto-play the first channel of the category if requested
+    if (shouldAutoPlay && firstUrl && firstCard) {
+        playStream(firstUrl, firstCard);
+    }
+}
+
+// Loads the video stream into HTML5 Player using HLS.js
+function playStream(url, card) {
+    // Remove highlight from all cards, then highlight the selected one
+    document.querySelectorAll('.channel-card').forEach(el => el.classList.remove('active-channel'));
+    if (card) card.classList.add('active-channel');
+    
+    currentPlayingUrl = url;
+    const video = document.getElementById('my-video');
+    
+    // Destroy existing HLS instance if it exists to prevent memory leaks
+    if (hls) {
+        hls.destroy();
+    }
+
+    // Check if the browser supports HLS.js
+    if (Hls.isSupported()) {
+        hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play().catch(() => {
+                console.log("Autoplay blocked by browser. User interaction required.");
+            });
+        });
+        
+        // Handle stream errors
+        hls.on(Hls.Events.ERROR, function (event, data) {
+            if (data.fatal) {
+                console.warn('HLS error encountered:', data);
+            }
+        });
+    } 
+    // Fallback for browsers that support HLS natively (like Safari on iOS/macOS)
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        video.addEventListener('loadedmetadata', function() {
+            video.play().catch(() => {
+                console.log("Autoplay blocked by browser. User interaction required.");
+            });
+        });
+    }
+
+    // On mobile, scroll up to the video player when a channel is selected
+    if (window.innerWidth < 992) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+</script>
+</body>
+</html>
