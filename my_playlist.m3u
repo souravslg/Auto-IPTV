@@ -3,6 +3,10 @@
 https://t.me/aftaahi_iptv
 #EXTINF:-1 group-title="Admin Info" tvg-logo="https://i.ibb.co/hRvpjD8/telegram-logo.png", Admin : Aftab Uddin
 https://t.me/aftaahi
+#EXTINF:-1 tvg-name="Oman Vs Nepal (ICC CWC League 2, Nepal 2026) [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ICC-Nepal_web.jpg" group-title="Live Event",Oman Vs Nepal (ICC CWC League 2, Nepal 2026) [LIVE]
+https://bd-mc-plive.fancode.com/mumbai/141978_english_hls_18f20d620735745_1ta-di_h264/1080p.m3u8?hdntl=Expires=1777534623~_GO=Generated~acl=/mumbai/141978_english_hls_18f20d620735745_1ta-di_h264/*~Signature=AVFFTBo7dRxG2xwYATzpyuwmOzYxARw0-Xyxx3fv_LE-Ltys20rSZKM_eTfcSX6j9nwY71SrkRMWyGL20mCvQnLwspgI
+#EXTINF:-1 tvg-name="Bangladesh Vs New Zealand (New Zealand tour of Bangladesh, 2026) [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/BAn-vs-NZ_ODIs_fc-web_1777018794830.jpg" group-title="Live Event",Bangladesh Vs New Zealand (New Zealand tour of Bangladesh, 2026) [LIVE]
+https://bd-mc-fblive.fancode.com/mumbai/142070_english_hls_21924c1e895043_1ta-di_h264/1080p.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
