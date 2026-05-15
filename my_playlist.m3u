@@ -3,14 +3,20 @@
 https://t.me/aftaahi_iptv
 #EXTINF:-1 group-title="Admin Info" tvg-logo="https://i.ibb.co/hRvpjD8/telegram-logo.png", Admin : Aftab Uddin
 https://t.me/aftaahi
-#EXTINF:-1 tvg-name="Mohammedan Sc Vs Mumbai City Fc [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140505_5956_MSC_MCFC_FC-Web_1772473605941.jpg" group-title="Live Event",Mohammedan Sc Vs Mumbai City Fc [LIVE]
-https://bd-mc-flive.fancode.com/mumbai/140505_english_dash_62853_1drmta-di_h264/index.mpd
+#EXTINF:-1 tvg-name="Japan Vs Tajikistan [LIVE]" tvg-logo="https://images.fancode.com/aig/match/v1778855488829/142549_CASACARDS_APP.png" group-title="Live Event",Japan Vs Tajikistan [LIVE]
+https://bd-mc-fblive.fancode.com/mumbai/142549_english_hls_886af6db9310477_1ta-di_h264/1080p.m3u8
+#EXTINF:-1 tvg-name="Saudi Arabia Vs China Pr [LIVE]" tvg-logo="https://images.fancode.com/aig/match/v1778853074112/142548_CASACARDS_APP.png" group-title="Live Event",Saudi Arabia Vs China Pr [LIVE]
+https://bd-mc-fblive.fancode.com/mumbai/142548_english_hls_e3bf89c8522422_1ta-di_h264/1080p.m3u8
 #EXTINF:-1 tvg-name="Men's Doubles Qf [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Internazionali-BNL-d'Italia_fc-web.jpg" group-title="Live Event",Men's Doubles Qf [LIVE]
-https://bd-mc-fblive.fancode.com/mumbai/142707_english_hls_79953af20c88877_1ta-di_h264/1080p.m3u8
-#EXTINF:-1 tvg-name="Day 2 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Amundi-German-Masters_fc-web.jpg" group-title="Live Event",Day 2 [LIVE]
-https://bd-mc-fblive.fancode.com/mumbai/142326_english_hls_61fdd11ca799887_1ta-di_h264/1080p.m3u8
+https://bd-mc-plive.fancode.com/mumbai/142707_english_hls_79953af20c88877_1ta-di_h264/1080p.m3u8?hdntl=Expires=1778945168~_GO=Generated~acl=/mumbai/142707_english_hls_79953af20c88877_1ta-di_h264/*~Signature=AQoI29JNUv1-6zgQM4HdtXmYYQYy-MlZeao3-hHUvJFbJwXABozLvul0j-Lj2WVGyhGdZdqYZKooeMOkBONuPlix33EJ
 #EXTINF:-1 tvg-name="Sf: C. Ruud Vs L. Darderi [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Casper-Ruud-vs-Luciano-Darderi_fc-web.jpg" group-title="Live Event",Sf: C. Ruud Vs L. Darderi [LIVE]
 https://bd-mc-fblive.fancode.com/mumbai/142237_english_hls_0cb34c323f39160_1ta-di_h264/1080p.m3u8
+#EXTINF:-1 tvg-name="Sf: J. Sinner Vs D. Medvedev [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Jannik-Sinner-vs-Daniil-Medvedev_fc-web.jpg" group-title="Live Event",Sf: J. Sinner Vs D. Medvedev [LIVE]
+https://bd-mc-fblive.fancode.com/mumbai/142238_english_hls_5741fc9a2a61679_1ta-di_h264/1080p.m3u8
+#EXTINF:-1 tvg-name="Day 2 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/PGA-Championship-old-.jpg" group-title="Live Event",Day 2 [LIVE]
+https://bd-mc-fblive.fancode.com/mumbai/142628_english_hls_41f2c4c0c784448_1ta-di_h264/1080p.m3u8
+#EXTINF:-1 tvg-name="Mohammedan Sc Vs Mumbai City Fc [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140505_5956_MSC_MCFC_FC-Web_1772473605941.jpg" group-title="Live Event",Mohammedan Sc Vs Mumbai City Fc [LIVE]
+https://bd-mc-flive.fancode.com/mumbai/140505_english_dash_62853_1drmta-di_h264/index.mpd
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
