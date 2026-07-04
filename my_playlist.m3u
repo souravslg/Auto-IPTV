@@ -3,10 +3,12 @@
 https://t.me/aftaahi_iptv
 #EXTINF:-1 group-title="Admin Info" tvg-logo="https://i.ibb.co/hRvpjD8/telegram-logo.png", Admin : Aftab Uddin
 https://t.me/aftaahi
-#EXTINF:-1 tvg-name="Tbc Vs Tbc [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/KPL-Indo-Nepal-T20_fc-web_1782227515719.jpg" group-title="Live Event",Tbc Vs Tbc [LIVE]
-https://bd-mc-flive.fancode.com/mumbai/143537_english_hls_3ee783f9f97534_1ta-di_h264/1080p.m3u8?hdntl=Expires=1783221125~_GO=Generated~acl=/mumbai/143537_english_hls_3ee783f9f97534_1ta-di_h264/*~Signature=Ac2BFellmHcjCsv5bO_-S8eBEhS2Wsrfl-pHt3e2RTXOyAT7sDq49V3BC6dlff2dgw2An4PCYglCZ6zYaGf-cm9ZHwwE
-#EXTINF:-1 tvg-name="Speen Ghar Tigers Vs Bost Defenders [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/143587_6148_BOS_SG_fc-web_1782725012178.jpg" group-title="Live Event",Speen Ghar Tigers Vs Bost Defenders [LIVE]
-https://bd-mc-flive.fancode.com/mumbai/143587_english_hls_ec13c73b3631566_1ta-di_h264/1080p.m3u8?hdntl=Expires=1783225146~_GO=Generated~acl=/mumbai/143587_english_hls_ec13c73b3631566_1ta-di_h264/*~Signature=Ac2BFeki1FSRmj4dsra7DlOCsRIX4GScPBOf_GzQW3cEGj574uhkluotMOO--SPNnwcRC5UWhiKElFFWTe6l6N_SNA8C
+#EXTINF:-1 tvg-name="Kcc Vs Rml Sports [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/KPL-Indo-Nepal-T20_fc-web_1782227515719.jpg" group-title="Live Event",Kcc Vs Rml Sports [LIVE]
+https://bd-mc-fblive.fancode.com/mumbai/143538_english_hls_4aa183e4be91805_1ta-di_h264/1080p.m3u8
+#EXTINF:-1 tvg-name="Namibia Vs Vidarbha [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/143629_6150_NAM_VID_fc-web.jpg" group-title="Live Event",Namibia Vs Vidarbha [LIVE]
+https://bd-mc-flive.fancode.com/mumbai/143629_english_hls_b52f22df0521309_1ta-di_h264/1080p.m3u8?hdntl=Expires=1783236371~_GO=Generated~acl=/mumbai/143629_english_hls_b52f22df0521309_1ta-di_h264/*~Signature=Ac2BFem1yxjh4bU_rX65lqMYsimkzCWUvtbl1q05uMrkAd4ZNHPS8SW4YhyJHyu4Pt_hoGcKJ7bEDHQQjLhDsMQ-ZR8E
+#EXTINF:-1 tvg-name="Sprint Race [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/F3_Austria_web.jpg" group-title="Live Event",Sprint Race [LIVE]
+https://bd-mc-flive.fancode.com/mumbai/139723_english_hls_03f3ad310468079_1ta-di_h264/1080p5.m3u8?hdntl=Expires=1783239962~_GO=Generated~acl=/mumbai/139723_english_hls_03f3ad310468079_1ta-di_h264/*~Signature=Ac2BFemWCNIUyd2xmcyFGORGPs1MTEU_fPxWNZ3RZvVdiXz6bquaRVSdjEzFLlQj1Yr4R0kPAn3fbdQOXts7EXW6zOoC
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
