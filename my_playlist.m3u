@@ -5,10 +5,10 @@ https://t.me/aftaahi_iptv
 https://t.me/aftaahi
 #EXTINF:-1 tvg-name="Day 2   World Feed [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ISPS-Handa-Womens-Scottish-Open-2026-old-match-card.jpg" group-title="Live Event",Day 2   World Feed [LIVE]
 https://bd-mc-pdlive.fancode.com/mumbai/4247418_english_hls_91bd793e2f64097_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-name="Free Practice 1 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-MatchCard_1784602530930.png" group-title="Live Event",Free Practice 1 [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/143796_english_hls_281f4906be4698_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-name="Practice Session [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/F2_mini_matchcard.jpg" group-title="Live Event",Practice Session [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/139642_english_hls_45e379dbe128076_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Day 5 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/The-ATP250_fc-web.jpg" group-title="Live Event",Day 5 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/143507_english_hls_829309fa7559979_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Practice 1 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Hungarian_GP_2026_web.jpg" group-title="Live Event",Practice 1 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/139472_english_hls_a535b4b48330732_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
