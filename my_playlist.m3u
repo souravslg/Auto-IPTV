@@ -3,18 +3,20 @@
 https://t.me/aftaahi_iptv
 #EXTINF:-1 group-title="Admin Info" tvg-logo="https://i.ibb.co/hRvpjD8/telegram-logo.png", Admin : Aftab Uddin
 https://t.me/aftaahi
+#EXTINF:-1 tvg-name="India Vs Zimbabwe [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ZIM-vs-IND_T20Is_fc-web.jpg" group-title="Live Event",India Vs Zimbabwe [LIVE]
+Unavailable
 #EXTINF:-1 tvg-name="Pakistan Women Vs Sri Lanka Women [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Sri-Lanka-vs-Pakistan-Womens-ODI-Series-Old-Match-card.jpg" group-title="Live Event",Pakistan Women Vs Sri Lanka Women [LIVE]
 https://bd-mc-pdlive.fancode.com/mumbai/4247426_english_hls_65d82e3e4c86377_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-name="Netherlands Vs Namibia [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/4246705_52990_NAM_NED_fc-App.png" group-title="Live Event",Netherlands Vs Namibia [LIVE]
 Unavailable
 #EXTINF:-1 tvg-name="Galle Gallants Vs Kandy Royals [LIVE]" tvg-logo="https://images.fancode.com/aig/match/v1784105762377/4246722_CASACARDS_SPORTY_APP.png" group-title="Live Event",Galle Gallants Vs Kandy Royals [LIVE]
 https://bd-mc-pdlive.fancode.com/mumbai/4246722_english_hls_dbf98ca42d71277_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-name="Malaysia Xi Vs Sea Hawks Cricket Club [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Malaysia-and-Sea-Hawks-Cricket-Club-old-match-card.jpg" group-title="Live Event",Malaysia Xi Vs Sea Hawks Cricket Club [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/4247198_english_hls_4e2b6a33c555878_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-name="Sprint Race [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/F3_GP_Old_match-card.jpg" group-title="Live Event",Sprint Race [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/139735_english_hls_aee5160e7e79607_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-name="Qualifying Session [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Porsche-Mobil-1-Supercup_Austria_Match_card_MRF_Old_match-card.jpg" group-title="Live Event",Qualifying Session [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/143612_english_hls_a1a0e23e4d13951_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Day 6 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/The-ATP250_fc-web.jpg" group-title="Live Event",Day 6 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/143508_english_hls_92168a39226791_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Race 1 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-MatchCard_1784602530930.png" group-title="Live Event",Race 1 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/143799_english_hls_c362f1d13033774_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Day 3   World Feed [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ISPS-Handa-Womens-Scottish-Open-2026-old-match-card.jpg" group-title="Live Event",Day 3   World Feed [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4247419_english_hls_7529753d6233196_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
