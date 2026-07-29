@@ -3,8 +3,10 @@
 https://t.me/aftaahi_iptv
 #EXTINF:-1 group-title="Admin Info" tvg-logo="https://i.ibb.co/hRvpjD8/telegram-logo.png", Admin : Aftab Uddin
 https://t.me/aftaahi
-#EXTINF:-1 tvg-name="World Feed 1 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mubadala_Web-match-card.png" group-title="Live Event",World Feed 1 [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/143641_english_hls_172b098b4923302_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Perth Scorchers Xi Vs Desert Vipers [LIVE]" tvg-logo="https://tvassets.roarzone.info/images/14.png" group-title="Live Event",Perth Scorchers Xi Vs Desert Vipers [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4247435_english_hls_ff499ca61529460_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Day 2 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-250---Mifel-Tennis-Open_fc-web.jpg" group-title="Live Event",Day 2 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/143517_english_hls_026d19806b81456_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-name="World Feed 2 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mubadala_Web-match-card.png" group-title="Live Event",World Feed 2 [LIVE]
 https://bd-mc-pdlive.fancode.com/mumbai/143643_english_hls_adfe3dbeb394633_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
