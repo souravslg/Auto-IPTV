@@ -5,8 +5,14 @@ https://t.me/aftaahi_iptv
 https://t.me/aftaahi
 #EXTINF:-1 tvg-name="Purani Dilli 6 Vs Central Delhi Kings [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/DPL_mini.png" group-title="Live Event",Purani Dilli 6 Vs Central Delhi Kings [LIVE]
 https://bd-mc-pdlive.fancode.com/mumbai/4247965_english_hls_7a1f83336319019_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Birmingham City F.c. Vs Fc Barcelona [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Barca.png" group-title="Live Event",Birmingham City F.c. Vs Fc Barcelona [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248218_english_hls_344fd577a419508_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-name="Main Feed   Day 2 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Rocket-Classic_fc-web.jpg" group-title="Live Event",Main Feed   Day 2 [LIVE]
 Unavailable
+#EXTINF:-1 tvg-name="World Feed [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mubadala_Web-match-card.png" group-title="Live Event",World Feed [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/143648_english_hls_c8a11fe48289952_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="World Feed   Day 2 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Rocket-Classic_fc-web.jpg" group-title="Live Event",World Feed   Day 2 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248045_english_hls_4260a2ee9454413_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
