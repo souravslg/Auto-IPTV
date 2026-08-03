@@ -3,12 +3,20 @@
 https://t.me/aftaahi_iptv
 #EXTINF:-1 group-title="Admin Info" tvg-logo="https://i.ibb.co/hRvpjD8/telegram-logo.png", Admin : Aftab Uddin
 https://t.me/aftaahi
-#EXTINF:-1 tvg-name="Afghanistan Pathans Vs Bangladesh Tigers [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/4248196_53019_AFP_BAT_fc-web.jpg" group-title="Live Event",Afghanistan Pathans Vs Bangladesh Tigers [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/4248196_english_hls_474e9b2ae850769_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-name="West Delhi Lions Vs Purani Dilli 6 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/DPL-Mini.png" group-title="Live Event",West Delhi Lions Vs Purani Dilli 6 [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/4247968_english_hls_12b02df88b18060_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-name="Scotland Vs United Arab Emirates [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/4248212_53013_SCO_UAE_fc-Web-.png" group-title="Live Event",Scotland Vs United Arab Emirates [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/4248212_english_hls_a82378278715666_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Indian Royals Vs Sri Lankan Lions [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/4248195_53019_INR_SLO_fc-web.jpg" group-title="Live Event",Indian Royals Vs Sri Lankan Lions [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248195_english_hls_cb68ac446465541_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="West Indies Vs Pakistan [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Pakistan-Tour-of-West-Indies-2026-old1.png" group-title="Live Event",West Indies Vs Pakistan [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/143634_english_hls_3a8752838638691_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="North Delhi Strikers Vs Central Delhi Kings [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/DPL-Mini.png" group-title="Live Event",North Delhi Strikers Vs Central Delhi Kings [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4247974_english_hls_4cd1944cee90089_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Center Court [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-Masters-Omnium-Banque-National-2026_FC-WEB.jpg" group-title="Live Event",Center Court [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248062_english_hls_3d9cae3bf277024_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="World Feed [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-Masters-Omnium-Banque-National-2026_FC-WEB.jpg" group-title="Live Event",World Feed [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248063_english_hls_1effecd64e43748_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Court 5 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-Masters-Omnium-Banque-National-2026_FC-WEB.jpg" group-title="Live Event",Court 5 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248064_english_hls_9c9081b60732638_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Court 9 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-Masters-Omnium-Banque-National-2026_FC-WEB.jpg" group-title="Live Event",Court 9 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248065_english_hls_f97aa26d5748943_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
