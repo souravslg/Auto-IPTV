@@ -3,10 +3,16 @@
 https://t.me/aftaahi_iptv
 #EXTINF:-1 group-title="Admin Info" tvg-logo="https://i.ibb.co/hRvpjD8/telegram-logo.png", Admin : Aftab Uddin
 https://t.me/aftaahi
-#EXTINF:-1 tvg-name="New Delhi Tigers Vs Outer Delhi Warriors [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/4247970_53005_NDT_ODW_fc-Web_1785835769882.png" group-title="Live Event",New Delhi Tigers Vs Outer Delhi Warriors [LIVE]
-https://bd-mc-pdlive.fancode.com/mumbai/4247970_english_hls_96c0e7798b23998_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-name="West Indies Vs Pakistan [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Pakistan-Tour-of-West-Indies-2026-old1.png" group-title="Live Event",West Indies Vs Pakistan [LIVE]
 https://bd-mc-pdlive.fancode.com/mumbai/143634_english_hls_3a8752838620186_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="South Delhi Superstarz Vs West Delhi Lions [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/4247978_53005_SDS_WDL_fc-Web_1785835769253.png" group-title="Live Event",South Delhi Superstarz Vs West Delhi Lions [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4247978_english_hls_6c7295b1e677335_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="World Feed [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-Masters-Omnium-Banque-National-2026_FC-WEB.jpg" group-title="Live Event",World Feed [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248066_english_hls_f60cf3662559481_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Rogers Court [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-Masters-Omnium-Banque-National-2026_FC-WEB.jpg" group-title="Live Event",Rogers Court [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248067_english_hls_9d75ed2e2276858_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-name="Court 5 [LIVE]" tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/ATP-Masters-Omnium-Banque-National-2026_FC-WEB.jpg" group-title="Live Event",Court 5 [LIVE]
+https://bd-mc-pdlive.fancode.com/mumbai/4248068_english_hls_469771a15198481_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/8.png" group-title="Bangla", Deepto TV
 Https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=1692000.m3u8
 #EXTINF:-1 tvg-logo="https://tvassets.roarzone.info/images/49.png" group-title="Bangla", ATN News
